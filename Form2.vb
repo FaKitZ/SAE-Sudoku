@@ -203,12 +203,15 @@
 
     Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
         Timer1.Stop()
-
+        PauseButton.Visible = False
+        PlayButton.Visible = True
         TableLayoutPanelNew.Enabled = False
     End Sub
 
     Private Sub PlayButton_Click(sender As Object, e As EventArgs) Handles PlayButton.Click
         Timer1.Start()
+        PlayButton.Visible = False
+        PauseButton.Visible = True
         TableLayoutPanelNew.Enabled = True
     End Sub
 End Class

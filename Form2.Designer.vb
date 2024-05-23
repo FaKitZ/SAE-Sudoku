@@ -94,6 +94,7 @@ Partial Class Form2
         Me.PlayButton.TabIndex = 6
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
+        Me.PlayButton.Visible = False
         '
         'TableLayoutPanelNew
         '
@@ -106,7 +107,7 @@ Partial Class Form2
         Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52.0!))
         Me.TableLayoutPanelNew.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanelNew.Name = "TableLayoutPanelNew"
         Me.TableLayoutPanelNew.RowCount = 9
