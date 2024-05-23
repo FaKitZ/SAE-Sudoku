@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LabelTimer = New System.Windows.Forms.Label()
         Me.LabelPseudo = New System.Windows.Forms.Label()
@@ -31,6 +32,8 @@ Partial Class Form2
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.PlayButton = New System.Windows.Forms.Button()
         Me.TableLayoutPanelNew = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Timer1
@@ -123,6 +126,16 @@ Partial Class Form2
         Me.TableLayoutPanelNew.Size = New System.Drawing.Size(452, 463)
         Me.TableLayoutPanelNew.TabIndex = 7
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(400, 351)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(270, 239)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,8 +149,10 @@ Partial Class Form2
         Me.Controls.Add(Me.pseudoLabel)
         Me.Controls.Add(Me.LabelPseudo)
         Me.Controls.Add(Me.LabelTimer)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Form2"
         Me.Text = "Form2"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -150,4 +165,5 @@ Partial Class Form2
     Friend WithEvents PauseButton As Button
     Friend WithEvents PlayButton As Button
     Friend WithEvents TableLayoutPanelNew As TableLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
