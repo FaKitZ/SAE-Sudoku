@@ -36,22 +36,30 @@ Public Class Form4
         End If
     End Sub
 
-    Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
-        If RadioButton1.Checked Then
-            difficulte = 60
+    Private Sub RadioButtonFacile_Click(sender As Object, e As EventArgs) Handles RadioButtonFacile.Click
+        If RadioButtonFacile.Checked Then
+            difficulte = 81 - 65
             Form2.ChangeDifficulte(difficulte)
         End If
     End Sub
-    Private Sub RadioButton2_Click(sender As Object, e As EventArgs) Handles RadioButton2.Click
-        If RadioButton2.Checked Then
-            difficulte = 74
+    Private Sub RadioButtonMoyen_Click(sender As Object, e As EventArgs) Handles RadioButtonMoyen.Click
+        If RadioButtonMoyen.Checked Then
+            difficulte = 81 - 55
             Form2.ChangeDifficulte(difficulte)
         End If
     End Sub
-    Private Sub RadioButton3_Click(sender As Object, e As EventArgs) Handles RadioButton3.Click
-        If RadioButton3.Checked Then
-            difficulte = 79
+    Private Sub RadioButtonDifficile_Click(sender As Object, e As EventArgs) Handles RadioButtonDifficile.Click
+        If RadioButtonDifficile.Checked Then
+            difficulte = 81 - 40
             Form2.ChangeDifficulte(difficulte)
+        End If
+    End Sub
+
+    Private Sub RadioButtonHard_Click(sender As Object, e As EventArgs) Handles RadioButtonHard.Click
+        If RadioButtonHard.Checked Then
+            difficulte = 81 - 20
+            Form2.ChangeDifficulte(difficulte)
+            'modif
         End If
     End Sub
 
@@ -117,9 +125,9 @@ Public Class Form4
         Me.LeaveButton.BackColor = Form1.darkAccent2
         Me.Button1.BackColor = Form1.darkAccent2
         Me.LeaveButton.ForeColor = Form1.highlight4
-        Me.RadioButton1.ForeColor = Form1.highlight4
-        Me.RadioButton2.ForeColor = Form1.highlight4
-        Me.RadioButton3.ForeColor = Form1.highlight4
+        Me.RadioButtonFacile.ForeColor = Form1.highlight4
+        Me.RadioButtonMoyen.ForeColor = Form1.highlight4
+        Me.RadioButtonDifficile.ForeColor = Form1.highlight4
         Me.RadioButton4.ForeColor = Form1.highlight4
         Me.RadioButton5.ForeColor = Form1.highlight4
     End Sub
@@ -135,9 +143,9 @@ Public Class Form4
             End If
 
         Next
-        Me.RadioButton1.ForeColor = DefaultForeColor
-        Me.RadioButton2.ForeColor = DefaultForeColor
-        Me.RadioButton3.ForeColor = DefaultForeColor
+        Me.RadioButtonFacile.ForeColor = DefaultForeColor
+        Me.RadioButtonMoyen.ForeColor = DefaultForeColor
+        Me.RadioButtonDifficile.ForeColor = DefaultForeColor
         Me.RadioButton4.ForeColor = DefaultForeColor
         Me.RadioButton5.ForeColor = DefaultForeColor
     End Sub
@@ -159,4 +167,6 @@ Public Class Form4
             End If
         End Using
     End Sub
+
+
 End Class

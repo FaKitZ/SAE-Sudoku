@@ -26,9 +26,9 @@ Partial Class Form4
         Me.LeaveButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonFacile = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonMoyen = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonDifficile = New System.Windows.Forms.RadioButton()
         Me.ChangeTimerButton = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -39,6 +39,7 @@ Partial Class Form4
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.RadioButtonHard = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'LeaveButton
@@ -72,41 +73,41 @@ Partial Class Form4
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Difficulté :"
         '
-        'RadioButton1
+        'RadioButtonFacile
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(94, 103)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton1.TabIndex = 12
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Facile"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.RadioButtonFacile.AutoSize = True
+        Me.RadioButtonFacile.Location = New System.Drawing.Point(94, 103)
+        Me.RadioButtonFacile.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonFacile.Name = "RadioButtonFacile"
+        Me.RadioButtonFacile.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButtonFacile.TabIndex = 12
+        Me.RadioButtonFacile.TabStop = True
+        Me.RadioButtonFacile.Text = "Facile"
+        Me.RadioButtonFacile.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'RadioButtonMoyen
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(148, 103)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(56, 17)
-        Me.RadioButton2.TabIndex = 13
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "moyen"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RadioButtonMoyen.AutoSize = True
+        Me.RadioButtonMoyen.Location = New System.Drawing.Point(148, 103)
+        Me.RadioButtonMoyen.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonMoyen.Name = "RadioButtonMoyen"
+        Me.RadioButtonMoyen.Size = New System.Drawing.Size(56, 17)
+        Me.RadioButtonMoyen.TabIndex = 13
+        Me.RadioButtonMoyen.TabStop = True
+        Me.RadioButtonMoyen.Text = "moyen"
+        Me.RadioButtonMoyen.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'RadioButtonDifficile
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(204, 103)
-        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(59, 17)
-        Me.RadioButton3.TabIndex = 14
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Difficile"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RadioButtonDifficile.AutoSize = True
+        Me.RadioButtonDifficile.Location = New System.Drawing.Point(204, 103)
+        Me.RadioButtonDifficile.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonDifficile.Name = "RadioButtonDifficile"
+        Me.RadioButtonDifficile.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButtonDifficile.TabIndex = 14
+        Me.RadioButtonDifficile.TabStop = True
+        Me.RadioButtonDifficile.Text = "Difficile"
+        Me.RadioButtonDifficile.UseVisualStyleBackColor = True
         '
         'ChangeTimerButton
         '
@@ -183,7 +184,7 @@ Partial Class Form4
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(304, 65)
+        Me.Label2.Location = New System.Drawing.Point(294, 165)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(135, 13)
         Me.Label2.TabIndex = 22
@@ -191,7 +192,7 @@ Partial Class Form4
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(303, 93)
+        Me.Button2.Location = New System.Drawing.Point(293, 193)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 25)
         Me.Button2.TabIndex = 23
@@ -200,12 +201,24 @@ Partial Class Form4
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(303, 131)
+        Me.Button3.Location = New System.Drawing.Point(293, 231)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(136, 24)
         Me.Button3.TabIndex = 24
         Me.Button3.Text = "Charger une save"
         Me.Button3.UseVisualStyleBackColor = True
+        '
+        'RadioButtonHard
+        '
+        Me.RadioButtonHard.AutoSize = True
+        Me.RadioButtonHard.Location = New System.Drawing.Point(267, 105)
+        Me.RadioButtonHard.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonHard.Name = "RadioButtonHard"
+        Me.RadioButtonHard.Size = New System.Drawing.Size(95, 17)
+        Me.RadioButtonHard.TabIndex = 25
+        Me.RadioButtonHard.TabStop = True
+        Me.RadioButtonHard.Text = "Paix à ton âme"
+        Me.RadioButtonHard.UseVisualStyleBackColor = True
         '
         'Form4
         '
@@ -213,6 +226,7 @@ Partial Class Form4
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(492, 284)
+        Me.Controls.Add(Me.RadioButtonHard)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
@@ -221,9 +235,9 @@ Partial Class Form4
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ChangeTimerButton)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.RadioButtonDifficile)
+        Me.Controls.Add(Me.RadioButtonMoyen)
+        Me.Controls.Add(Me.RadioButtonFacile)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LeaveButton)
@@ -239,9 +253,9 @@ Partial Class Form4
     Friend WithEvents LeaveButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButtonFacile As RadioButton
+    Friend WithEvents RadioButtonMoyen As RadioButton
+    Friend WithEvents RadioButtonDifficile As RadioButton
     Friend WithEvents ChangeTimerButton As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -252,4 +266,5 @@ Partial Class Form4
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents RadioButtonHard As RadioButton
 End Class
