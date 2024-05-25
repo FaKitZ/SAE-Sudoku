@@ -35,14 +35,19 @@ Partial Class Form4
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'LeaveButton
         '
         Me.LeaveButton.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.LeaveButton.Location = New System.Drawing.Point(107, 289)
+        Me.LeaveButton.Location = New System.Drawing.Point(80, 235)
+        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LeaveButton.Name = "LeaveButton"
-        Me.LeaveButton.Size = New System.Drawing.Size(167, 25)
+        Me.LeaveButton.Size = New System.Drawing.Size(125, 20)
         Me.LeaveButton.TabIndex = 8
         Me.LeaveButton.Text = "Back to menu"
         Me.LeaveButton.UseVisualStyleBackColor = False
@@ -50,27 +55,30 @@ Partial Class Form4
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 81)
+        Me.Label1.Location = New System.Drawing.Point(31, 66)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 16)
+        Me.Label1.Size = New System.Drawing.Size(112, 13)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Temps (defaut 7min) : "
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 129)
+        Me.Label3.Location = New System.Drawing.Point(31, 105)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 16)
+        Me.Label3.Size = New System.Drawing.Size(54, 13)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Difficulté :"
         '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(126, 127)
+        Me.RadioButton1.Location = New System.Drawing.Point(94, 103)
+        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(65, 20)
+        Me.RadioButton1.Size = New System.Drawing.Size(53, 17)
         Me.RadioButton1.TabIndex = 12
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Facile"
@@ -79,9 +87,10 @@ Partial Class Form4
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(197, 127)
+        Me.RadioButton2.Location = New System.Drawing.Point(148, 103)
+        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(69, 20)
+        Me.RadioButton2.Size = New System.Drawing.Size(56, 17)
         Me.RadioButton2.TabIndex = 13
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "moyen"
@@ -90,9 +99,10 @@ Partial Class Form4
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(272, 127)
+        Me.RadioButton3.Location = New System.Drawing.Point(204, 103)
+        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(71, 20)
+        Me.RadioButton3.Size = New System.Drawing.Size(59, 17)
         Me.RadioButton3.TabIndex = 14
         Me.RadioButton3.TabStop = True
         Me.RadioButton3.Text = "Difficile"
@@ -101,9 +111,10 @@ Partial Class Form4
         'ChangeTimerButton
         '
         Me.ChangeTimerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ChangeTimerButton.Location = New System.Drawing.Point(197, 73)
+        Me.ChangeTimerButton.Location = New System.Drawing.Point(148, 59)
+        Me.ChangeTimerButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeTimerButton.Name = "ChangeTimerButton"
-        Me.ChangeTimerButton.Size = New System.Drawing.Size(74, 33)
+        Me.ChangeTimerButton.Size = New System.Drawing.Size(56, 27)
         Me.ChangeTimerButton.TabIndex = 15
         Me.ChangeTimerButton.Text = "Changer"
         Me.ChangeTimerButton.UseVisualStyleBackColor = True
@@ -113,18 +124,20 @@ Partial Class Form4
         Me.Label5.AutoSize = True
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 18.0!)
-        Me.Label5.Location = New System.Drawing.Point(107, 9)
+        Me.Label5.Location = New System.Drawing.Point(177, 9)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(167, 43)
+        Me.Label5.Size = New System.Drawing.Size(133, 34)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Paramètres"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(64, 167)
+        Me.Label4.Location = New System.Drawing.Point(48, 136)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 16)
+        Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Map :"
         '
@@ -132,9 +145,10 @@ Partial Class Form4
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton4.Location = New System.Drawing.Point(161, 166)
+        Me.RadioButton4.Location = New System.Drawing.Point(121, 135)
+        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(69, 20)
+        Me.RadioButton4.Size = New System.Drawing.Size(58, 17)
         Me.RadioButton4.TabIndex = 19
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "RIVER"
@@ -143,9 +157,10 @@ Partial Class Form4
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(236, 166)
+        Me.RadioButton5.Location = New System.Drawing.Point(177, 135)
+        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(70, 20)
+        Me.RadioButton5.Size = New System.Drawing.Size(59, 17)
         Me.RadioButton5.TabIndex = 20
         Me.RadioButton5.TabStop = True
         Me.RadioButton5.Text = "SNOW"
@@ -158,18 +173,49 @@ Partial Class Form4
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(151, 206)
+        Me.Button1.Location = New System.Drawing.Point(113, 167)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(69, 52)
+        Me.Button1.Size = New System.Drawing.Size(52, 42)
         Me.Button1.TabIndex = 21
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(304, 65)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(135, 13)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Choix du dossier info stats :"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(303, 93)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(136, 25)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Chemin du dossier"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(303, 131)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(136, 24)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Charger une save"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form4
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(374, 340)
+        Me.ClientSize = New System.Drawing.Size(492, 284)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.RadioButton5)
         Me.Controls.Add(Me.RadioButton4)
         Me.Controls.Add(Me.Label4)
@@ -182,6 +228,7 @@ Partial Class Form4
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.Button1)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
@@ -201,4 +248,8 @@ Partial Class Form4
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
