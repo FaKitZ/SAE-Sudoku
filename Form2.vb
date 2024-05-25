@@ -16,7 +16,11 @@ Public Class Form2
     Dim darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
+    ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
+    Dim wavFilePath As String = "C:\Users\Issuko\Source\Repos\FaKitZ\Sudoku-VB-LE-BON\Resources\audio.wav"
 
+    ' Utiliser SoundPlayer pour lire le fichier WAV
+    Dim player As New SoundPlayer(wavFilePath)
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
