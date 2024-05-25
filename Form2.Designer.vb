@@ -33,6 +33,8 @@ Partial Class Form2
         Me.PlayButton = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ButtonMusic = New System.Windows.Forms.Button()
+        Me.ButtonMusicOFF = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -134,7 +136,7 @@ Partial Class Form2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(14, 21)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.MaximumSize = New System.Drawing.Size(470, 448)
         Me.TableLayoutPanel1.MinimumSize = New System.Drawing.Size(470, 441)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -151,6 +153,25 @@ Partial Class Form2
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(470, 441)
         Me.TableLayoutPanel1.TabIndex = 10
         '
+        'ButtonMusic
+        '
+        Me.ButtonMusic.Location = New System.Drawing.Point(54, 498)
+        Me.ButtonMusic.Name = "ButtonMusic"
+        Me.ButtonMusic.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonMusic.TabIndex = 11
+        Me.ButtonMusic.Text = "MUSIC ON"
+        Me.ButtonMusic.UseVisualStyleBackColor = True
+        '
+        'ButtonMusicOFF
+        '
+        Me.ButtonMusicOFF.Location = New System.Drawing.Point(54, 498)
+        Me.ButtonMusicOFF.Name = "ButtonMusicOFF"
+        Me.ButtonMusicOFF.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonMusicOFF.TabIndex = 0
+        Me.ButtonMusicOFF.Text = "MUSIC OFF"
+        Me.ButtonMusicOFF.UseVisualStyleBackColor = True
+        Me.ButtonMusicOFF.Visible = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,6 +179,8 @@ Partial Class Form2
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(650, 580)
+        Me.Controls.Add(Me.ButtonMusicOFF)
+        Me.Controls.Add(Me.ButtonMusic)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.PlayButton)
         Me.Controls.Add(Me.PauseButton)
@@ -185,4 +208,6 @@ Partial Class Form2
     Friend WithEvents PlayButton As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents ButtonMusic As Button
+    Friend WithEvents ButtonMusicOFF As Button
 End Class

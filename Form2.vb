@@ -1,4 +1,7 @@
-﻿Public Class Form2
+﻿Imports System.IO
+Imports System.Media
+
+Public Class Form2
 
     Private remainingTime As TimeSpan
     Private initialTime As TimeSpan = TimeSpan.FromMinutes(7)
@@ -13,6 +16,13 @@
     Dim darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
+
+    'musique
+    ' Chemin du fichier WAV
+    Dim wavFilePath As String = "C:\Users\Issuko\Source\Repos\FaKitZ\Sudoku-VB-LE-BON\Resources\audio.wav"
+
+    ' Utiliser SoundPlayer pour lire le fichier WAV
+    Dim player As New SoundPlayer(wavFilePath)
 
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
@@ -258,6 +268,7 @@
     Private Sub leaveButon_Click(sender As Object, e As EventArgs) Handles leaveButon.Click
         Dim arret As Integer = MsgBox("Voulez-vous arrêter la partie ?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Arrêt")
         If arret = vbYes Then
+            player.Stop()
             FinDePartieSiLoose()
             Me.Close()
             Form1.Show()
@@ -292,5 +303,17 @@
                 txtBox.ForeColor = DefaultForeColor
             End If
         Next
+    End Sub
+
+    Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
+        ButtonMusic.Visible = False
+        ButtonMusicOFF.Visible = True
+        player.Play()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonMusicOFF.Click
+        ButtonMusicOFF.Visible = False
+        ButtonMusic.Visible = True
+        player.Stop()
     End Sub
 End Class
