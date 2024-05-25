@@ -88,9 +88,9 @@ Partial Class Form2
         '
         Me.PauseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PauseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PauseButton.Location = New System.Drawing.Point(511, 139)
+        Me.PauseButton.Location = New System.Drawing.Point(511, 152)
         Me.PauseButton.Name = "PauseButton"
-        Me.PauseButton.Size = New System.Drawing.Size(64, 22)
+        Me.PauseButton.Size = New System.Drawing.Size(91, 22)
         Me.PauseButton.TabIndex = 5
         Me.PauseButton.Text = "Pause"
         Me.PauseButton.UseVisualStyleBackColor = False
@@ -99,9 +99,9 @@ Partial Class Form2
         '
         Me.PlayButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PlayButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PlayButton.Location = New System.Drawing.Point(511, 173)
+        Me.PlayButton.Location = New System.Drawing.Point(511, 152)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(64, 22)
+        Me.PlayButton.Size = New System.Drawing.Size(91, 22)
         Me.PlayButton.TabIndex = 6
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
@@ -155,18 +155,18 @@ Partial Class Form2
         '
         'ButtonMusic
         '
-        Me.ButtonMusic.Location = New System.Drawing.Point(54, 498)
+        Me.ButtonMusic.Location = New System.Drawing.Point(511, 180)
         Me.ButtonMusic.Name = "ButtonMusic"
-        Me.ButtonMusic.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonMusic.Size = New System.Drawing.Size(91, 23)
         Me.ButtonMusic.TabIndex = 11
         Me.ButtonMusic.Text = "MUSIC ON"
         Me.ButtonMusic.UseVisualStyleBackColor = True
         '
         'ButtonMusicOFF
         '
-        Me.ButtonMusicOFF.Location = New System.Drawing.Point(54, 498)
+        Me.ButtonMusicOFF.Location = New System.Drawing.Point(511, 180)
         Me.ButtonMusicOFF.Name = "ButtonMusicOFF"
-        Me.ButtonMusicOFF.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonMusicOFF.Size = New System.Drawing.Size(91, 23)
         Me.ButtonMusicOFF.TabIndex = 0
         Me.ButtonMusicOFF.Text = "MUSIC OFF"
         Me.ButtonMusicOFF.UseVisualStyleBackColor = True
