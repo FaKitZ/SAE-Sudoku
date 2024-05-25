@@ -14,6 +14,30 @@
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        For i As Integer = 0 To 8
+            For j As Integer = 0 To 8
+                Dim textBox As New TextBox
+                textBox.Multiline = True
+                textBox.TextAlign = HorizontalAlignment.Center
+                textBox.Dock = DockStyle.Fill
+                textBox.Font = New Font("Arial", 22, FontStyle.Bold)
+                AddHandler textBox.TextChanged, AddressOf TextBox_TextChanged
+                textBox.MaxLength = 1
+                TableLayoutPanel1.Controls.Add(textBox, j, i)
+            Next
+        Next
+        GenerateSudoku()
+        StartTimmerGame()
+        IsDark = Form1.IsDark
+        If IsDark Then
+            ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
+        End If
+        ApplyMapCustomization()
+        LabelPseudo.Text = Form1.nameComboBox1.Text
+
+    End Sub
+
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         ApplyMapCustomization()
@@ -53,29 +77,6 @@
                 End If
             End If
         Next
-    End Sub
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For i As Integer = 0 To 8
-            For j As Integer = 0 To 8
-                Dim textBox As New TextBox
-                textBox.Multiline = True
-                textBox.TextAlign = HorizontalAlignment.Center
-                textBox.Dock = DockStyle.Fill
-                textBox.Font = New Font("Arial", 22, FontStyle.Bold)
-                AddHandler textBox.TextChanged, AddressOf TextBox_TextChanged
-                textBox.MaxLength = 1
-                TableLayoutPanel1.Controls.Add(textBox, j, i)
-            Next
-        Next
-        GenerateSudoku()
-        StartTimmerGame()
-        IsDark = Form1.IsDark
-        If IsDark Then
-            ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
-        End If
-        ApplyMapCustomization()
-        LabelPseudo.Text = Form1.nameComboBox1.Text
-
     End Sub
 
     Public Sub SetTimerInterval(minutes As Integer)

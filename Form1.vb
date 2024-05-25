@@ -15,6 +15,9 @@ Public Class Form1
     Public highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
     Public highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If ModuleJoueur.CheminDossier IsNot Nothing Then
+            ModuleJoueur.ChargerJoueursDepuisFichier("joueurs.txt")
+        End If
         itemsListComboBoxF1.AddRange(New String() {nameComboBox1.Text})
         UpdateComboBoxItemsF1()
     End Sub
@@ -22,6 +25,9 @@ Public Class Form1
     Private Sub leaveBoutton_Click(sender As Object, e As EventArgs) Handles leaveBoutton.Click
         Dim arret As Integer = MsgBox("Voulez-vous arrêter le jeu ?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Arrêt")
         If arret = vbYes Then
+            If ModuleJoueur.CheminDossier IsNot Nothing Then
+                ModuleJoueur.EnregistrerJoueursDansFichier("joueurs.txt")
+            End If
             Me.Close()
         End If
     End Sub

@@ -142,4 +142,21 @@ Public Class Form4
         Me.RadioButton5.ForeColor = DefaultForeColor
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Folderbrowser()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Folderbrowser()
+        ModuleJoueur.ChargerJoueursDepuisFichier("joueurs.txt")
+    End Sub
+
+    Public Sub Folderbrowser()
+        Using dossierDialog As New FolderBrowserDialog()
+            If dossierDialog.ShowDialog() = DialogResult.OK Then
+                ModuleJoueur.CheminDossier = dossierDialog.SelectedPath
+                MsgBox("Chemin de dossier sélectionné: " & ModuleJoueur.CheminDossier)
+            End If
+        End Using
+    End Sub
 End Class
