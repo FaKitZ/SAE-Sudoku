@@ -155,6 +155,7 @@ Partial Class Form2
         '
         'ButtonMusic
         '
+        Me.ButtonMusic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonMusic.Location = New System.Drawing.Point(511, 180)
         Me.ButtonMusic.Name = "ButtonMusic"
         Me.ButtonMusic.Size = New System.Drawing.Size(91, 23)
@@ -164,6 +165,7 @@ Partial Class Form2
         '
         'ButtonMusicOFF
         '
+        Me.ButtonMusicOFF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonMusicOFF.Location = New System.Drawing.Point(511, 180)
         Me.ButtonMusicOFF.Name = "ButtonMusicOFF"
         Me.ButtonMusicOFF.Size = New System.Drawing.Size(91, 23)
