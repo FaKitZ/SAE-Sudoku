@@ -66,7 +66,7 @@ Module ModuleJoueur
             FileClose(fileNum)
         End If
     End Sub
-
+    'test
     Public Sub ChargerJoueursDepuisFichier(nomFichier As String)
         If CheminDossier IsNot Nothing Then
             Dim cheminFichier As String = System.IO.Path.Combine(CheminDossier, nomFichier)
