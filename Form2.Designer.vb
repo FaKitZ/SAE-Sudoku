@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form2
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form2
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
@@ -31,8 +31,8 @@ Partial Class Form2
         Me.leaveButon = New System.Windows.Forms.Button()
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.PlayButton = New System.Windows.Forms.Button()
-        Me.TableLayoutPanelNew = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,107 +42,127 @@ Partial Class Form2
         '
         'LabelTimer
         '
+        Me.LabelTimer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelTimer.AutoSize = True
-        Me.LabelTimer.Location = New System.Drawing.Point(511, 101)
+        Me.LabelTimer.Location = New System.Drawing.Point(681, 124)
+        Me.LabelTimer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelTimer.Name = "LabelTimer"
-        Me.LabelTimer.Size = New System.Drawing.Size(67, 13)
+        Me.LabelTimer.Size = New System.Drawing.Size(87, 16)
         Me.LabelTimer.TabIndex = 1
         Me.LabelTimer.Text = "LabelTimmer"
         '
         'LabelPseudo
         '
+        Me.LabelPseudo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelPseudo.AutoSize = True
-        Me.LabelPseudo.Location = New System.Drawing.Point(511, 64)
+        Me.LabelPseudo.Location = New System.Drawing.Point(681, 79)
+        Me.LabelPseudo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelPseudo.Name = "LabelPseudo"
-        Me.LabelPseudo.Size = New System.Drawing.Size(69, 13)
+        Me.LabelPseudo.Size = New System.Drawing.Size(88, 16)
         Me.LabelPseudo.TabIndex = 2
         Me.LabelPseudo.Text = "LabelPseudo"
         '
         'pseudoLabel
         '
         Me.pseudoLabel.AutoSize = True
-        Me.pseudoLabel.Location = New System.Drawing.Point(511, 30)
+        Me.pseudoLabel.Location = New System.Drawing.Point(681, 37)
+        Me.pseudoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.pseudoLabel.Name = "pseudoLabel"
-        Me.pseudoLabel.Size = New System.Drawing.Size(96, 13)
+        Me.pseudoLabel.Size = New System.Drawing.Size(118, 16)
         Me.pseudoLabel.TabIndex = 3
         Me.pseudoLabel.Text = "Pseudo du joueur :"
         '
         'leaveButon
         '
+        Me.leaveButon.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.leaveButon.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.leaveButon.ForeColor = System.Drawing.Color.Black
-        Me.leaveButon.Location = New System.Drawing.Point(511, 207)
+        Me.leaveButon.Location = New System.Drawing.Point(681, 255)
+        Me.leaveButon.Margin = New System.Windows.Forms.Padding(4)
         Me.leaveButon.Name = "leaveButon"
-        Me.leaveButon.Size = New System.Drawing.Size(91, 29)
+        Me.leaveButon.Size = New System.Drawing.Size(121, 36)
         Me.leaveButon.TabIndex = 4
         Me.leaveButon.Text = "Back to menu"
         Me.leaveButon.UseVisualStyleBackColor = False
         '
         'PauseButton
         '
+        Me.PauseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PauseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PauseButton.Location = New System.Drawing.Point(511, 139)
+        Me.PauseButton.Location = New System.Drawing.Point(681, 171)
+        Me.PauseButton.Margin = New System.Windows.Forms.Padding(4)
         Me.PauseButton.Name = "PauseButton"
-        Me.PauseButton.Size = New System.Drawing.Size(64, 22)
+        Me.PauseButton.Size = New System.Drawing.Size(85, 27)
         Me.PauseButton.TabIndex = 5
         Me.PauseButton.Text = "Pause"
         Me.PauseButton.UseVisualStyleBackColor = False
         '
         'PlayButton
         '
+        Me.PlayButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PlayButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PlayButton.Location = New System.Drawing.Point(511, 173)
+        Me.PlayButton.Location = New System.Drawing.Point(681, 213)
+        Me.PlayButton.Margin = New System.Windows.Forms.Padding(4)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(64, 22)
+        Me.PlayButton.Size = New System.Drawing.Size(85, 27)
         Me.PlayButton.TabIndex = 6
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
         Me.PlayButton.Visible = False
         '
-        'TableLayoutPanelNew
-        '
-        Me.TableLayoutPanelNew.ColumnCount = 9
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52.0!))
-        Me.TableLayoutPanelNew.Location = New System.Drawing.Point(12, 12)
-        Me.TableLayoutPanelNew.Name = "TableLayoutPanelNew"
-        Me.TableLayoutPanelNew.RowCount = 9
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanelNew.Size = New System.Drawing.Size(452, 463)
-        Me.TableLayoutPanelNew.TabIndex = 7
-        '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(400, 351)
+        Me.PictureBox1.Location = New System.Drawing.Point(604, 464)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(270, 239)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.Size = New System.Drawing.Size(265, 251)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TableLayoutPanel1.ColumnCount = 9
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 26)
+        Me.TableLayoutPanel1.MaximumSize = New System.Drawing.Size(627, 552)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 9
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(627, 543)
+        Me.TableLayoutPanel1.TabIndex = 10
+        '
         'Form2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(650, 580)
-        Me.Controls.Add(Me.TableLayoutPanelNew)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(867, 714)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.PlayButton)
         Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.leaveButon)
@@ -150,8 +170,11 @@ Partial Class Form2
         Me.Controls.Add(Me.LabelPseudo)
         Me.Controls.Add(Me.LabelTimer)
         Me.Controls.Add(Me.PictureBox1)
+        Me.DoubleBuffered = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SUDOKU"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -164,6 +187,6 @@ Partial Class Form2
     Friend WithEvents leaveButon As Button
     Friend WithEvents PauseButton As Button
     Friend WithEvents PlayButton As Button
-    Friend WithEvents TableLayoutPanelNew As TableLayoutPanel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

@@ -2,8 +2,24 @@
 
 Public Class Form3
     Private joueurs As List(Of ModuleJoueur.JOUEUR)
+    Public IsDark As Boolean
+
+
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
+        IsDark = Form1.IsDark
+        If IsDark Then
+            BackColor = Form1.darkBackground
+            ButtonStatsAvance.ForeColor = Form1.highlight4
+            ButtonStatsAvance.BackColor = Form1.darkAccent2
+            ButtonRemiseà0.BackColor = Form1.darkAccent2
+            ButtonRemiseà0.ForeColor = Form1.highlight1
+            Label1.ForeColor = Form1.highlight4
+            Label2.ForeColor = Form1.highlight4
+            nameLabel1.ForeColor = Form1.highlight4
+            nbGameLabel3.ForeColor = Form1.highlight4
+            TimeLabel2.ForeColor = Form1.highlight4
+        End If
     End Sub
     Private Sub LoadData()
         ListBox1.Items.Clear()
@@ -88,5 +104,13 @@ Public Class Form3
             ListBox4.Items.Add(joueur.CumulTimmer.ToString("hh\:mm\:ss"))
         Next
     End Sub
-
+    Public Sub ApplyLightTheme()
+        Me.BackColor = SystemColors.ActiveCaption
+        ' Changez les autres propriétés de contrôle si nécessaire
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = DefaultForeColor
+            End If
+        Next
+    End Sub
 End Class

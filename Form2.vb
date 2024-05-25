@@ -3,6 +3,57 @@
     Private remainingTime As TimeSpan
     Private initialTime As TimeSpan = TimeSpan.FromMinutes(7)
     Private Difficulte As Integer = 71
+    Private CurrentBackground As String
+    Private CurrentColorScheme As String
+    Public IsDark As Boolean
+
+    'Couleurs'
+    Dim darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
+    Dim darkAccent2 As Color = Color.FromArgb(72, 72, 72)     ' Accent sombre 2
+    Dim darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
+    Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
+    Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
+
+    Public Sub ChangeMap(background As String)
+        CurrentBackground = background
+        ApplyMapCustomization()
+    End Sub
+
+    Private Sub ApplyMapCustomization()
+        ' Change background image
+        Select Case CurrentBackground
+            Case "RIVER"
+                Me.BackgroundImage = My.Resources.River
+                Dim color1 As Color = Color.FromArgb(255, 165, 0)   ' Orange (feuilles d'automne)
+                Dim color2 As Color = Color.FromArgb(255, 223, 0)   ' Jaune (feuilles d'automne)
+                Dim color3 As Color = Color.FromArgb(205, 92, 92)   ' Rouge adouci (feuilles d'automne)
+                Dim color4 As Color = Color.FromArgb(0, 191, 255)   ' Bleu (ciel clair)
+                ApplyGridColors(color1, color2, color3, color4)
+            Case "SNOW"
+                Dim color1 As Color = Color.FromArgb(255, 255, 255)   ' Blanc (neige)
+                Dim color2 As Color = Color.FromArgb(0, 191, 255)     ' Bleu clair (ciel et ombres sur la neige)
+                Dim color3 As Color = Color.FromArgb(64, 224, 208)    ' Bleu turquoise
+                Dim color4 As Color = Color.FromArgb(139, 69, 19)     ' Marron (tronc d'arbres et cabane)
+                ApplyGridColors(color1, color2, color3, color4)
+                Me.BackgroundImage = My.Resources.Neige
+
+        End Select
+    End Sub
+
+    Public Sub ApplyGridColors(gridBackColor As Color, gridForeColor As Color, readOnlyBackColor As Color, readOnlyForeColor As Color)
+        For Each ctrl As Control In TableLayoutPanel1.Controls
+            If TypeOf ctrl Is TextBox Then
+                Dim txtBox As TextBox = ctrl
+                If txtBox.ReadOnly Then
+                    txtBox.BackColor = readOnlyBackColor
+                    txtBox.ForeColor = readOnlyForeColor
+                Else
+                    txtBox.BackColor = gridBackColor
+                    txtBox.ForeColor = gridForeColor
+                End If
+            End If
+        Next
+    End Sub
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -13,13 +64,18 @@
                 textBox.Font = New Font("Arial", 22, FontStyle.Bold)
                 AddHandler textBox.TextChanged, AddressOf TextBox_TextChanged
                 textBox.MaxLength = 1
-                TableLayoutPanelNew.Controls.Add(textBox, j, i)
+                TableLayoutPanel1.Controls.Add(textBox, j, i)
             Next
         Next
-
         GenerateSudoku()
         StartTimmerGame()
+        IsDark = Form1.IsDark
+        If IsDark Then
+            ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
+        End If
+        ApplyMapCustomization()
         LabelPseudo.Text = Form1.nameComboBox1.Text
+
     End Sub
 
     Public Sub SetTimerInterval(minutes As Integer)
@@ -51,18 +107,25 @@
 
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs)
         Dim txtBox As TextBox = CType(sender, TextBox)
-        Dim ligneIndex As Integer = TableLayoutPanelNew.GetRow(txtBox)
-        Dim colonneIndex As Integer = TableLayoutPanelNew.GetColumn(txtBox)
+        Dim ligneIndex As Integer = TableLayoutPanel1.GetRow(txtBox)
+        Dim colonneIndex As Integer = TableLayoutPanel1.GetColumn(txtBox)
+
+        RemoveHandler txtBox.TextChanged, AddressOf TextBox_TextChanged
 
         If Not IsValidEntry(txtBox.Text, ligneIndex, colonneIndex) Then
             txtBox.BackColor = Color.Red
             MessageBox.Show("Entrée invalide!")
             txtBox.Clear()
         Else
-            txtBox.BackColor = DefaultBackColor
+            If IsDark Then
+                txtBox.BackColor = darkAccent3
+            Else
+                txtBox.BackColor = DefaultBackColor
+            End If
             CheckIfGrilleComplete()
         End If
 
+        AddHandler txtBox.TextChanged, AddressOf TextBox_TextChanged
     End Sub
 
     Private Function IsValidEntry(valeur As String, ligne As Integer, colonne As Integer) As Boolean
@@ -73,7 +136,7 @@
         ' Check les lignes
         For j As Integer = 0 To 8
             If j <> colonne Then
-                Dim otherBox As TextBox = CType(TableLayoutPanelNew.GetControlFromPosition(j, ligne), TextBox)
+                Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, ligne), TextBox)
                 If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                     Return False
                 End If
@@ -83,7 +146,7 @@
         ' Check les colonnes
         For i As Integer = 0 To 8
             If i <> ligne Then
-                Dim otherBox As TextBox = CType(TableLayoutPanelNew.GetControlFromPosition(colonne, i), TextBox)
+                Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(colonne, i), TextBox)
                 If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                     Return False
                 End If
@@ -96,7 +159,7 @@
         For i As Integer = startLigne To startLigne + 2
             For j As Integer = startColonne To startColonne + 2
                 If (i <> ligne Or j <> colonne) Then
-                    Dim otherBox As TextBox = CType(TableLayoutPanelNew.GetControlFromPosition(j, i), TextBox)
+                    Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
                     If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                         Return False
                     End If
@@ -122,7 +185,7 @@
 
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
-                Dim txtBox As TextBox = CType(TableLayoutPanelNew.GetControlFromPosition(j, i), TextBox)
+                Dim txtBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
                 If grid(i, j) <> 0 Then
                     txtBox.Text = grid(i, j).ToString()
                     txtBox.ReadOnly = True
@@ -167,7 +230,7 @@
     Private Sub CheckIfGrilleComplete()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
-                Dim txtBox As TextBox = CType(TableLayoutPanelNew.GetControlFromPosition(j, i), TextBox)
+                Dim txtBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
                 If txtBox Is Nothing OrElse String.IsNullOrEmpty(txtBox.Text) OrElse Not IsValidEntry(txtBox.Text, i, j) Then
                     Return
                 End If
@@ -203,15 +266,31 @@
 
     Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
         Timer1.Stop()
-        PauseButton.Visible = False
         PlayButton.Visible = True
-        TableLayoutPanelNew.Enabled = False
+        PauseButton.Visible = False
+        TableLayoutPanel1.Enabled = False
     End Sub
 
     Private Sub PlayButton_Click(sender As Object, e As EventArgs) Handles PlayButton.Click
         Timer1.Start()
+        TableLayoutPanel1.Enabled = True
         PlayButton.Visible = False
         PauseButton.Visible = True
-        TableLayoutPanelNew.Enabled = True
+    End Sub
+    Public Sub ApplyLightTheme()
+        Me.BackColor = SystemColors.ActiveCaption
+        ' Changez les autres propriétés de contrôle si nécessaire
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = DefaultForeColor
+            End If
+        Next
+        For Each ctrl As Control In TableLayoutPanel1.Controls
+            If TypeOf ctrl Is TextBox Then
+                Dim txtBox As TextBox = ctrl
+                txtBox.BackColor = DefaultBackColor
+                txtBox.ForeColor = DefaultForeColor
+            End If
+        Next
     End Sub
 End Class

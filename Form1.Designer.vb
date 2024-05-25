@@ -22,109 +22,134 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        nameLabel = New Label()
-        nameComboBox1 = New ComboBox()
-        GroupBox1 = New GroupBox()
-        ButtonParametre = New Button()
-        ScoreButton1 = New Button()
-        leaveBoutton = New Button()
-        playButton = New Button()
-        Label1 = New Label()
-        GroupBox1.SuspendLayout()
-        SuspendLayout()
-        ' 
-        ' nameLabel
-        ' 
-        nameLabel.AutoSize = True
-        nameLabel.Location = New Point(20, 25)
-        nameLabel.Name = "nameLabel"
-        nameLabel.Size = New Size(88, 15)
-        nameLabel.TabIndex = 0
-        nameLabel.Text = "Nom du joueur"
-        ' 
-        ' nameComboBox1
-        ' 
-        nameComboBox1.BackColor = SystemColors.ActiveBorder
-        nameComboBox1.FormattingEnabled = True
-        nameComboBox1.Location = New Point(160, 22)
-        nameComboBox1.Name = "nameComboBox1"
-        nameComboBox1.Size = New Size(121, 23)
-        nameComboBox1.TabIndex = 1
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Controls.Add(ButtonParametre)
-        GroupBox1.Controls.Add(ScoreButton1)
-        GroupBox1.Controls.Add(leaveBoutton)
-        GroupBox1.Controls.Add(playButton)
-        GroupBox1.Controls.Add(nameLabel)
-        GroupBox1.Controls.Add(nameComboBox1)
-        GroupBox1.Location = New Point(46, 44)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(314, 185)
-        GroupBox1.TabIndex = 2
-        GroupBox1.TabStop = False
-        ' 
-        ' ButtonParametre
-        ' 
-        ButtonParametre.Location = New Point(34, 124)
-        ButtonParametre.Name = "ButtonParametre"
-        ButtonParametre.Size = New Size(75, 23)
-        ButtonParametre.TabIndex = 5
-        ButtonParametre.Text = "Paramètre"
-        ButtonParametre.UseVisualStyleBackColor = True
-        ' 
-        ' ScoreButton1
-        ' 
-        ScoreButton1.Location = New Point(34, 73)
-        ScoreButton1.Name = "ScoreButton1"
-        ScoreButton1.Size = New Size(74, 23)
-        ScoreButton1.TabIndex = 4
-        ScoreButton1.Text = "Scores"
-        ScoreButton1.UseVisualStyleBackColor = True
-        ' 
-        ' leaveBoutton
-        ' 
-        leaveBoutton.Location = New Point(197, 124)
-        leaveBoutton.Name = "leaveBoutton"
-        leaveBoutton.Size = New Size(75, 23)
-        leaveBoutton.TabIndex = 3
-        leaveBoutton.Text = "Exit"
-        leaveBoutton.UseVisualStyleBackColor = True
-        ' 
-        ' playButton
-        ' 
-        playButton.Location = New Point(197, 73)
-        playButton.Name = "playButton"
-        playButton.Size = New Size(75, 23)
-        playButton.TabIndex = 2
-        playButton.Text = "Play"
-        playButton.UseVisualStyleBackColor = True
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 18F)
-        Label1.Location = New Point(114, 9)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(165, 32)
-        Label1.TabIndex = 3
-        Label1.Text = "Menu Sudoku"
-        ' 
-        ' Form1
-        ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(413, 280)
-        Controls.Add(Label1)
-        Controls.Add(GroupBox1)
-        Name = "Form1"
-        Text = "Form1"
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
-        ResumeLayout(False)
-        PerformLayout()
+        Me.nameLabel = New System.Windows.Forms.Label()
+        Me.nameComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonParametre = New System.Windows.Forms.Button()
+        Me.ScoreButton1 = New System.Windows.Forms.Button()
+        Me.leaveBoutton = New System.Windows.Forms.Button()
+        Me.playButton = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'nameLabel
+        '
+        Me.nameLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.nameLabel.AutoSize = True
+        Me.nameLabel.Location = New System.Drawing.Point(126, 24)
+        Me.nameLabel.Name = "nameLabel"
+        Me.nameLabel.Size = New System.Drawing.Size(94, 16)
+        Me.nameLabel.TabIndex = 0
+        Me.nameLabel.Text = "Nom du joueur"
+        '
+        'nameComboBox1
+        '
+        Me.nameComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.nameComboBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.nameComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.nameComboBox1.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.nameComboBox1.FormattingEnabled = True
+        Me.nameComboBox1.Location = New System.Drawing.Point(108, 43)
+        Me.nameComboBox1.Name = "nameComboBox1"
+        Me.nameComboBox1.Size = New System.Drawing.Size(138, 24)
+        Me.nameComboBox1.TabIndex = 1
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.ButtonParametre)
+        Me.GroupBox1.Controls.Add(Me.ScoreButton1)
+        Me.GroupBox1.Controls.Add(Me.leaveBoutton)
+        Me.GroupBox1.Controls.Add(Me.playButton)
+        Me.GroupBox1.Controls.Add(Me.nameLabel)
+        Me.GroupBox1.Controls.Add(Me.nameComboBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(53, 47)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(359, 222)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        '
+        'ButtonParametre
+        '
+        Me.ButtonParametre.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.ButtonParametre.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonParametre.Location = New System.Drawing.Point(93, 162)
+        Me.ButtonParametre.MaximumSize = New System.Drawing.Size(100, 35)
+        Me.ButtonParametre.Name = "ButtonParametre"
+        Me.ButtonParametre.Size = New System.Drawing.Size(86, 35)
+        Me.ButtonParametre.TabIndex = 5
+        Me.ButtonParametre.Text = "Paramètre"
+        Me.ButtonParametre.UseVisualStyleBackColor = True
+        '
+        'ScoreButton1
+        '
+        Me.ScoreButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.ScoreButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ScoreButton1.Location = New System.Drawing.Point(135, 113)
+        Me.ScoreButton1.MaximumSize = New System.Drawing.Size(100, 35)
+        Me.ScoreButton1.Name = "ScoreButton1"
+        Me.ScoreButton1.Size = New System.Drawing.Size(85, 35)
+        Me.ScoreButton1.TabIndex = 4
+        Me.ScoreButton1.Text = "Scores"
+        Me.ScoreButton1.UseVisualStyleBackColor = True
+        '
+        'leaveBoutton
+        '
+        Me.leaveBoutton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.leaveBoutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.leaveBoutton.Location = New System.Drawing.Point(185, 162)
+        Me.leaveBoutton.MaximumSize = New System.Drawing.Size(100, 35)
+        Me.leaveBoutton.Name = "leaveBoutton"
+        Me.leaveBoutton.Size = New System.Drawing.Size(86, 35)
+        Me.leaveBoutton.TabIndex = 3
+        Me.leaveBoutton.Text = "Exit"
+        Me.leaveBoutton.UseVisualStyleBackColor = True
+        '
+        'playButton
+        '
+        Me.playButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.playButton.Location = New System.Drawing.Point(135, 82)
+        Me.playButton.MaximumSize = New System.Drawing.Size(100, 35)
+        Me.playButton.Name = "playButton"
+        Me.playButton.Size = New System.Drawing.Size(86, 35)
+        Me.playButton.TabIndex = 2
+        Me.playButton.Text = "Play"
+        Me.playButton.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!)
+        Me.Label1.Location = New System.Drawing.Point(130, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(204, 41)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Menu Sudoku"
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClientSize = New System.Drawing.Size(472, 299)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "è"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
     Friend WithEvents nameLabel As Label

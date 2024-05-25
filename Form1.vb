@@ -3,7 +3,17 @@
 Public Class Form1
     Dim i As Integer
     Private itemsListComboBoxF1 As New List(Of String)
+    Public IsDark As Boolean
 
+    'couleurs'
+    Public darkBackground As Color = Color.FromArgb(18, 18, 18)  ' Fond sombre
+    Public darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
+    Public darkAccent2 As Color = Color.FromArgb(72, 72, 72)     ' Accent sombre 2
+    Public darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
+    Public highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
+    Public highlight2 As Color = Color.FromArgb(255, 215, 0)     ' Jaune doré pour les points de mise en évidence
+    Public highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
+    Public highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         itemsListComboBoxF1.AddRange(New String() {nameComboBox1.Text})
         UpdateComboBoxItemsF1()
@@ -69,5 +79,25 @@ Public Class Form1
     Private Sub ButtonParametre_Click(sender As Object, e As EventArgs) Handles ButtonParametre.Click
         Me.Hide()
         Form4.Show()
+    End Sub
+    Public Sub ApplyLightTheme()
+        Me.BackColor = SystemColors.ActiveCaption
+        ' Changez les autres propriétés de contrôle si nécessaire
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = DefaultForeColor
+            End If
+        Next
+        For Each ctrl As Control In Me.GroupBox1.Controls
+            If TypeOf ctrl Is Button Then
+                ctrl.BackColor = DefaultBackColor
+                ctrl.ForeColor = DefaultForeColor
+            ElseIf TypeOf ctrl Is Label Then
+                ctrl.ForeColor = DefaultForeColor
+            ElseIf TypeOf ctrl Is ComboBox Then
+                ctrl.BackColor = DefaultBackColor
+                ctrl.ForeColor = DefaultForeColor
+            End If
+        Next
     End Sub
 End Class

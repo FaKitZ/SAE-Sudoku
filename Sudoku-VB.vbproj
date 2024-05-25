@@ -147,5 +147,23 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixel_art_issukio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Neige.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\River.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Darkmod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Darkmod-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DALL_E-2024-05-25-01.33.14-A-logo-for-a-light-mode-button-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
