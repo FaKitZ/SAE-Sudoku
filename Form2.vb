@@ -16,7 +16,9 @@ Public Class Form2
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
     ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
-    Dim wavFilePath As String = "C:\Users\Issuko\Source\Repos\FaKitZ\Sudoku-VB-LE-BON\Resources\audio.wav"
+
+    Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
+
 
     ' Utiliser SoundPlayer pour lire le fichier WAV
     Dim player As New SoundPlayer(wavFilePath)
@@ -187,7 +189,7 @@ Public Class Form2
         ' Nombre d'indices à afficher
         ' Plus le chiffre est grand, plus il y a de case vide
         ' à l'inverse si le chiffre est petit alors il y aura peu de case vide à remplir
-        Dim nbDeChiffreAffiche As Integer = Difficulte
+        Dim nbDeChiffreAffiche As Integer = 1 'Difficulte
         CreatePuzzle(grid, nbDeChiffreAffiche)
 
         For i As Integer = 0 To 8

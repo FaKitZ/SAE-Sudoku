@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
-Public Class Form3
+﻿Public Class Form3
     Private joueurs As List(Of ModuleJoueur.JOUEUR)
     Public IsDark As Boolean
 
@@ -68,7 +66,6 @@ Public Class Form3
             joueurs = joueurs.OrderBy(Function(j) j.Nom).ToList()
             ReloadListBoxes()
         End If
-
     End Sub
 
     Private Sub ButtonTriTimer_Click(sender As Object, e As EventArgs) Handles ButtonTriTimer.Click

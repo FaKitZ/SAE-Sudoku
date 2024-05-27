@@ -1,7 +1,4 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
-Imports System.Xml
-
-Public Class Form4
+﻿Public Class Form4
     Dim input As String
     Dim minute As Integer
     Dim timeInterval As TimeSpan

@@ -1,5 +1,4 @@
-﻿Imports System.Xml
-
+﻿
 Public Class Form1
     Dim i As Integer
     Private itemsListComboBoxF1 As New List(Of String)
