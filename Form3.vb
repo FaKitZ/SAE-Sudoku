@@ -26,9 +26,9 @@
         ListBox3.Items.Clear()
         ListBox4.Items.Clear()
 
-        If ModuleJoueur.Joueurs IsNot Nothing Then
-            joueurs = ModuleJoueur.Joueurs.ToList()
-            For Each joueur As ModuleJoueur.JOUEUR In ModuleJoueur.Joueurs
+        If ModuleJoueur.TableauJoueurs IsNot Nothing Then
+            joueurs = ModuleJoueur.TableauJoueurs.ToList()
+            For Each joueur As ModuleJoueur.JOUEUR In ModuleJoueur.TableauJoueurs
                 ListBox1.Items.Add(joueur.Nom)
                 ComboBox1.Items.Add(joueur.Nom)
                 ListBox3.Items.Add(joueur.NbGamePlay.ToString())
@@ -62,14 +62,14 @@
         End If
     End Sub
     Private Sub ButtonTriPseudo_Click(sender As Object, e As EventArgs) Handles ButtonTriPseudo.Click
-        If ModuleJoueur.Joueurs IsNot Nothing Then
+        If ModuleJoueur.TableauJoueurs IsNot Nothing Then
             joueurs = joueurs.OrderBy(Function(j) j.Nom).ToList()
             ReloadListBoxes()
         End If
     End Sub
 
     Private Sub ButtonTriTimer_Click(sender As Object, e As EventArgs) Handles ButtonTriTimer.Click
-        If ModuleJoueur.Joueurs IsNot Nothing Then
+        If ModuleJoueur.TableauJoueurs IsNot Nothing Then
             joueurs = joueurs.OrderBy(Function(j) j.BestTemps).ToList()
             ReloadListBoxes()
         End If
@@ -81,7 +81,7 @@
     End Sub
 
     Private Sub ButtonRemiseà0_Click(sender As Object, e As EventArgs) Handles ButtonRemiseà0.Click
-        If ModuleJoueur.Joueurs IsNot Nothing Then
+        If ModuleJoueur.TableauJoueurs IsNot Nothing Then
             LoadData()
         End If
 
