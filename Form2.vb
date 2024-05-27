@@ -16,9 +16,7 @@ Public Class Form2
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
     ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
-
-    Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
-
+    Dim wavFilePath As String = "C:\Users\Issuko\Source\Repos\FaKitZ\Sudoku-VB-LE-BON\Resources\audio.wav"
 
     ' Utiliser SoundPlayer pour lire le fichier WAV
     Dim player As New SoundPlayer(wavFilePath)
