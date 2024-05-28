@@ -187,7 +187,7 @@ Public Class Form2
         ' Nombre d'indices à afficher
         ' Plus le chiffre est grand, plus il y a de case vide
         ' à l'inverse si le chiffre est petit alors il y aura peu de case vide à remplir
-        Dim nbDeChiffreAffiche As Integer = 1 'Difficulte
+        Dim nbDeChiffreAffiche As Integer = Difficulte
         CreatePuzzle(grid, nbDeChiffreAffiche)
 
         For i As Integer = 0 To 8

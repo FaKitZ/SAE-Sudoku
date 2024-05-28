@@ -1,5 +1,4 @@
-﻿
-Public Class Form1
+﻿Public Class Form1
     Dim i As Integer
     Private itemsListComboBoxF1 As New List(Of String)
     Public IsDark As Boolean
@@ -104,9 +103,5 @@ Public Class Form1
                 ctrl.ForeColor = DefaultForeColor
             End If
         Next
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
     End Sub
 End Class

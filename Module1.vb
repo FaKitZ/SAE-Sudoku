@@ -1,5 +1,4 @@
-﻿Imports System.IO
-
+﻿
 Module ModuleJoueur
     Public Structure JOUEUR
         Public Nom As String
@@ -9,7 +8,7 @@ Module ModuleJoueur
         Public LastGameTime As TimeSpan
     End Structure
 
-    Public TableauJoueurs() As JOUEUR
+    Private TableauJoueurs() As JOUEUR
     Public CheminDossier As String
     Sub New()
         ' Définir CheminDossier à la racine du projet
@@ -91,6 +90,38 @@ Module ModuleJoueur
                 TableauJoueurs = lignes.ToArray()
                 FileClose(fileNum)
             End If
+        End If
+    End Sub
+    Public Sub LoadData()
+        Form3.ListBox1.Items.Clear()
+        Form3.ComboBox1.Items.Clear()
+        Form3.ListBox2.Items.Clear()
+        Form3.ListBox3.Items.Clear()
+        Form3.ListBox4.Items.Clear()
+
+        If TableauJoueurs IsNot Nothing Then
+            TableauJoueurs = TableauJoueurs.ToArray()
+            For Each joueur As JOUEUR In TableauJoueurs
+                Form3.ListBox1.Items.Add(joueur.Nom)
+                Form3.ComboBox1.Items.Add(joueur.Nom)
+                Form3.ListBox3.Items.Add(joueur.NbGamePlay.ToString())
+                Form3.ListBox2.Items.Add(joueur.BestTemps.ToString("mm\:ss"))
+                Form3.ListBox4.Items.Add(joueur.CumulTimmer.ToString("hh\:mm\:ss"))
+            Next
+        End If
+    End Sub
+
+    Public Sub TriPseudo()
+        If TableauJoueurs IsNot Nothing Then
+            TableauJoueurs = TableauJoueurs.OrderBy(Function(j) j.Nom).ToArray()
+            LoadData()
+        End If
+    End Sub
+
+    Public Sub TriBestTimer()
+        If TableauJoueurs IsNot Nothing Then
+            TableauJoueurs = TableauJoueurs.OrderBy(Function(j) j.BestTemps).ToArray()
+            LoadData()
         End If
     End Sub
 

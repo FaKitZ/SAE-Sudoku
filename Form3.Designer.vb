@@ -35,7 +35,6 @@ Partial Class Form3
         Me.ButtonStatsAvance = New System.Windows.Forms.Button()
         Me.ButtonTriPseudo = New System.Windows.Forms.Button()
         Me.ButtonTriTimer = New System.Windows.Forms.Button()
-        Me.ButtonRemiseà0 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -166,17 +165,7 @@ Partial Class Form3
         Me.ButtonTriTimer.Text = "Tri Best timer"
         Me.ButtonTriTimer.UseVisualStyleBackColor = True
         '
-        'ButtonRemiseà0
-        '
-        Me.ButtonRemiseà0.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.ButtonRemiseà0.Location = New System.Drawing.Point(164, 117)
-        Me.ButtonRemiseà0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ButtonRemiseà0.Name = "ButtonRemiseà0"
-        Me.ButtonRemiseà0.Size = New System.Drawing.Size(89, 20)
-        Me.ButtonRemiseà0.TabIndex = 13
-        Me.ButtonRemiseà0.Text = "Remise à 0"
-        Me.ButtonRemiseà0.UseVisualStyleBackColor = False
-        '
+
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -195,7 +184,6 @@ Partial Class Form3
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(632, 211)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ButtonRemiseà0)
         Me.Controls.Add(Me.ButtonTriTimer)
         Me.Controls.Add(Me.ButtonTriPseudo)
         Me.Controls.Add(Me.ButtonStatsAvance)
@@ -231,6 +219,5 @@ Partial Class Form3
     Friend WithEvents ButtonStatsAvance As Button
     Friend WithEvents ButtonTriPseudo As Button
     Friend WithEvents ButtonTriTimer As Button
-    Friend WithEvents ButtonRemiseà0 As Button
     Friend WithEvents Label2 As Label
 End Class
