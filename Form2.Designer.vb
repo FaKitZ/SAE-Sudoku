@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form2
+Partial Class JeuSudoku
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -23,7 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(JeuSudoku))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LabelTimer = New System.Windows.Forms.Label()
         Me.LabelPseudo = New System.Windows.Forms.Label()
@@ -174,7 +174,7 @@ Partial Class Form2
         Me.ButtonMusicOFF.UseVisualStyleBackColor = True
         Me.ButtonMusicOFF.Visible = False
         '
-        'Form2
+        'JeuSudoku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -193,7 +193,7 @@ Partial Class Form2
         Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
         Me.MinimumSize = New System.Drawing.Size(666, 619)
-        Me.Name = "Form2"
+        Me.Name = "JeuSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

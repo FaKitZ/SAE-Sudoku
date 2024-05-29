@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form4
+Partial Class ParametreSudoku
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -22,7 +22,7 @@ Partial Class Form4
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ParametreSudoku))
         Me.LeaveButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -220,7 +220,7 @@ Partial Class Form4
         Me.RadioButtonHard.Text = "Paix à ton âme"
         Me.RadioButtonHard.UseVisualStyleBackColor = True
         '
-        'Form4
+        'ParametreSudoku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -243,7 +243,7 @@ Partial Class Form4
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.Button1)
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "Form4"
+        Me.Name = "ParametreSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
         Me.ResumeLayout(False)

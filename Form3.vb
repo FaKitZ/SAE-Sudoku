@@ -1,46 +1,48 @@
-﻿Public Class Form3
+﻿Public Class StatSudoku
     Private joueurs As List(Of ModuleJoueur.JOUEUR)
     Public IsDark As Boolean
 
 
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub StatSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ModuleJoueur.LoadData()
-        IsDark = Form1.IsDark
+        IsDark = MenuSudoku.IsDark
         If IsDark Then
-            BackColor = Form1.darkBackground
-            ButtonStatsAvance.ForeColor = Form1.highlight4
-            ButtonStatsAvance.BackColor = Form1.darkAccent2
-            Label1.ForeColor = Form1.highlight4
-            Label2.ForeColor = Form1.highlight4
-            nameLabel1.ForeColor = Form1.highlight4
-            nbGameLabel3.ForeColor = Form1.highlight4
-            TimeLabel2.ForeColor = Form1.highlight4
+            BackColor = MenuSudoku.darkBackground
+            ButtonStatsAvance.ForeColor = MenuSudoku.highlight4
+            ButtonStatsAvance.BackColor = MenuSudoku.darkAccent2
+            Label1.ForeColor = MenuSudoku.highlight4
+            Label2.ForeColor = MenuSudoku.highlight4
+            nameLabel1.ForeColor = MenuSudoku.highlight4
+            nbGameLabel3.ForeColor = MenuSudoku.highlight4
+            TimeLabel2.ForeColor = MenuSudoku.highlight4
         End If
     End Sub
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
         Me.Close()
-        Form1.Show()
+        MenuSudoku.Show()
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        SyncSelections(ListBox1.SelectedIndex)
+    'Synchronise les listeBoxIndex par rapport aux bon joueur sélectionné
+    Private Sub ListBoxName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxName.SelectedIndexChanged
+        SyncSelections(ListBoxName.SelectedIndex)
     End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        SyncSelections(ComboBox1.SelectedIndex)
+    'Synchronise les listeBoxIndex par rapport aux bon joueur sélectionné
+    Private Sub ComboBoxName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxName.SelectedIndexChanged
+        SyncSelections(ComboBoxName.SelectedIndex)
 
     End Sub
 
     Private Sub SyncSelections(index As Integer)
         If index >= 0 Then
-            ListBox1.SelectedIndex = index
-            ComboBox1.SelectedIndex = index
-            ListBox2.SelectedIndex = index
-            ListBox3.SelectedIndex = index
-            ListBox4.SelectedIndex = index
+            ListBoxName.SelectedIndex = index
+            ComboBoxName.SelectedIndex = index
+            ListBoxBestTimer.SelectedIndex = index
+            ListBoxTotalPartie.SelectedIndex = index
+            ListBoxHeureDeJeu.SelectedIndex = index
         End If
     End Sub
+
     Private Sub ButtonTriPseudo_Click(sender As Object, e As EventArgs) Handles ButtonTriPseudo.Click
         ModuleJoueur.TriPseudo()
     End Sub
@@ -50,7 +52,7 @@
     End Sub
 
     Private Sub ButtonStatsAvance_Click(sender As Object, e As EventArgs) Handles ButtonStatsAvance.Click
-        MsgBox("Pseudo du joueur : " & ListBox1.Text & vbCrLf & "Meilleur temps : " & ListBox2.Text & vbCrLf & "Total Partie : " & ListBox3.Text & vbCrLf & "Heure de jeu :" & ListBox4.Text & MsgBoxStyle.Information)
+        MsgBox("Pseudo du joueur : " & ListBoxName.Text & vbCrLf & "Meilleur temps : " & ListBoxBestTimer.Text & vbCrLf & "Total Partie : " & ListBoxTotalPartie.Text & vbCrLf & "Heure de jeu :" & ListBoxHeureDeJeu.Text & MsgBoxStyle.Information)
     End Sub
 
     Public Sub ApplyLightTheme()

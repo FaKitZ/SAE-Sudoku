@@ -2,12 +2,14 @@
     Private grid(8, 8) As Integer
     Private rand As New Random()
 
+    'génère le sudoku dans le form2 (jeuSudoku) et return la grille (grid)
     Public Function Generate() As Integer(,)
         Array.Clear(grid, 0, grid.Length)
         FillGrid()
         Return grid
     End Function
 
+    'Crée la grille avec des chiffres mélangé
     Private Function FillGrid() As Boolean
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -30,12 +32,14 @@
         Return True
     End Function
 
+    'Mélange les chiffres random de la liste
     Private Function GetShuffledNumbers() As List(Of Integer)
         Dim numbers As List(Of Integer) = Enumerable.Range(1, 9).ToList()
         Dim shuffled As List(Of Integer) = numbers.OrderBy(Function(a) rand.Next()).ToList()
         Return shuffled
     End Function
 
+    'Vérifie si les chiffres sont valides par rapport aux règle de jeux
     Private Function IsValid(row As Integer, col As Integer, num As Integer) As Boolean
 
         For j As Integer = 0 To 8

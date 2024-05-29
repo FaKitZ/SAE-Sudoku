@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form3
+Partial Class StatSudoku
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -22,57 +22,57 @@ Partial Class Form3
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ListBoxName = New System.Windows.Forms.ListBox()
+        Me.ListBoxBestTimer = New System.Windows.Forms.ListBox()
+        Me.ComboBoxName = New System.Windows.Forms.ComboBox()
+        Me.ListBoxTotalPartie = New System.Windows.Forms.ListBox()
         Me.nameLabel1 = New System.Windows.Forms.Label()
         Me.TimeLabel2 = New System.Windows.Forms.Label()
         Me.nbGameLabel3 = New System.Windows.Forms.Label()
         Me.LeaveButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.ListBoxHeureDeJeu = New System.Windows.Forms.ListBox()
         Me.ButtonStatsAvance = New System.Windows.Forms.Button()
         Me.ButtonTriPseudo = New System.Windows.Forms.Button()
         Me.ButtonTriTimer = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'ListBoxName
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(16, 74)
-        Me.ListBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(104, 56)
-        Me.ListBox1.TabIndex = 0
+        Me.ListBoxName.FormattingEnabled = True
+        Me.ListBoxName.Location = New System.Drawing.Point(16, 74)
+        Me.ListBoxName.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBoxName.Name = "ListBoxName"
+        Me.ListBoxName.Size = New System.Drawing.Size(104, 56)
+        Me.ListBoxName.TabIndex = 0
         '
-        'ListBox2
+        'ListBoxBestTimer
         '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(302, 74)
-        Me.ListBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(104, 43)
-        Me.ListBox2.TabIndex = 1
+        Me.ListBoxBestTimer.FormattingEnabled = True
+        Me.ListBoxBestTimer.Location = New System.Drawing.Point(302, 74)
+        Me.ListBoxBestTimer.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBoxBestTimer.Name = "ListBoxBestTimer"
+        Me.ListBoxBestTimer.Size = New System.Drawing.Size(104, 43)
+        Me.ListBoxBestTimer.TabIndex = 1
         '
-        'ComboBox1
+        'ComboBoxName
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(14, 134)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(104, 21)
-        Me.ComboBox1.TabIndex = 2
+        Me.ComboBoxName.FormattingEnabled = True
+        Me.ComboBoxName.Location = New System.Drawing.Point(14, 134)
+        Me.ComboBoxName.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBoxName.Name = "ComboBoxName"
+        Me.ComboBoxName.Size = New System.Drawing.Size(104, 21)
+        Me.ComboBoxName.TabIndex = 2
         '
-        'ListBox3
+        'ListBoxTotalPartie
         '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(410, 74)
-        Me.ListBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(104, 43)
-        Me.ListBox3.TabIndex = 3
+        Me.ListBoxTotalPartie.FormattingEnabled = True
+        Me.ListBoxTotalPartie.Location = New System.Drawing.Point(410, 74)
+        Me.ListBoxTotalPartie.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBoxTotalPartie.Name = "ListBoxTotalPartie"
+        Me.ListBoxTotalPartie.Size = New System.Drawing.Size(104, 43)
+        Me.ListBoxTotalPartie.TabIndex = 3
         '
         'nameLabel1
         '
@@ -108,7 +108,7 @@ Partial Class Form3
         '
         Me.LeaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.LeaveButton.Location = New System.Drawing.Point(535, 134)
-        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LeaveButton.Name = "LeaveButton"
         Me.LeaveButton.Size = New System.Drawing.Size(86, 25)
         Me.LeaveButton.TabIndex = 7
@@ -125,20 +125,20 @@ Partial Class Form3
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Heure de jeu :"
         '
-        'ListBox4
+        'ListBoxHeureDeJeu
         '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(518, 74)
-        Me.ListBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(104, 43)
-        Me.ListBox4.TabIndex = 8
+        Me.ListBoxHeureDeJeu.FormattingEnabled = True
+        Me.ListBoxHeureDeJeu.Location = New System.Drawing.Point(518, 74)
+        Me.ListBoxHeureDeJeu.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBoxHeureDeJeu.Name = "ListBoxHeureDeJeu"
+        Me.ListBoxHeureDeJeu.Size = New System.Drawing.Size(104, 43)
+        Me.ListBoxHeureDeJeu.TabIndex = 8
         '
         'ButtonStatsAvance
         '
         Me.ButtonStatsAvance.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ButtonStatsAvance.Location = New System.Drawing.Point(164, 143)
-        Me.ButtonStatsAvance.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ButtonStatsAvance.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonStatsAvance.Name = "ButtonStatsAvance"
         Me.ButtonStatsAvance.Size = New System.Drawing.Size(89, 20)
         Me.ButtonStatsAvance.TabIndex = 10
@@ -148,7 +148,7 @@ Partial Class Form3
         'ButtonTriPseudo
         '
         Me.ButtonTriPseudo.Location = New System.Drawing.Point(124, 74)
-        Me.ButtonTriPseudo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ButtonTriPseudo.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonTriPseudo.Name = "ButtonTriPseudo"
         Me.ButtonTriPseudo.Size = New System.Drawing.Size(64, 39)
         Me.ButtonTriPseudo.TabIndex = 11
@@ -158,14 +158,13 @@ Partial Class Form3
         'ButtonTriTimer
         '
         Me.ButtonTriTimer.Location = New System.Drawing.Point(232, 74)
-        Me.ButtonTriTimer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ButtonTriTimer.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonTriTimer.Name = "ButtonTriTimer"
         Me.ButtonTriTimer.Size = New System.Drawing.Size(64, 39)
         Me.ButtonTriTimer.TabIndex = 12
         Me.ButtonTriTimer.Text = "Tri Best timer"
         Me.ButtonTriTimer.UseVisualStyleBackColor = True
         '
-
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -177,7 +176,7 @@ Partial Class Form3
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Statistique"
         '
-        'Form3
+        'StatSudoku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -188,17 +187,17 @@ Partial Class Form3
         Me.Controls.Add(Me.ButtonTriPseudo)
         Me.Controls.Add(Me.ButtonStatsAvance)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ListBox4)
+        Me.Controls.Add(Me.ListBoxHeureDeJeu)
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.nbGameLabel3)
         Me.Controls.Add(Me.TimeLabel2)
         Me.Controls.Add(Me.nameLabel1)
-        Me.Controls.Add(Me.ListBox3)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.ListBox2)
-        Me.Controls.Add(Me.ListBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "Form3"
+        Me.Controls.Add(Me.ListBoxTotalPartie)
+        Me.Controls.Add(Me.ComboBoxName)
+        Me.Controls.Add(Me.ListBoxBestTimer)
+        Me.Controls.Add(Me.ListBoxName)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Name = "StatSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
         Me.ResumeLayout(False)
@@ -206,16 +205,16 @@ Partial Class Form3
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents ListBoxName As ListBox
+    Friend WithEvents ListBoxBestTimer As ListBox
+    Friend WithEvents ComboBoxName As ComboBox
+    Friend WithEvents ListBoxTotalPartie As ListBox
     Friend WithEvents nameLabel1 As Label
     Friend WithEvents TimeLabel2 As Label
     Friend WithEvents nbGameLabel3 As Label
     Friend WithEvents LeaveButton As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents ListBoxHeureDeJeu As ListBox
     Friend WithEvents ButtonStatsAvance As Button
     Friend WithEvents ButtonTriPseudo As Button
     Friend WithEvents ButtonTriTimer As Button

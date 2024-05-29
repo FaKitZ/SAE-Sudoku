@@ -1,6 +1,6 @@
-﻿Public Class Form1
+﻿Public Class MenuSudoku
     Dim i As Integer
-    Private itemsListComboBoxF1 As New List(Of String)
+    Private itemsListComboBoxF1 As New List(Of String)  'Liste de joueurs pour la comboBox du menu
     Public IsDark As Boolean
 
     'couleurs'
@@ -12,7 +12,7 @@
     Public highlight2 As Color = Color.FromArgb(255, 215, 0)     ' Jaune doré pour les points de mise en évidence
     Public highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
     Public highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub MenuSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If ModuleJoueur.CheminDossier IsNot Nothing Then
             ModuleJoueur.ChargerJoueursDepuisFichier("joueurs.txt")
         End If
@@ -47,14 +47,15 @@
                     UpdateComboBoxItemsF1()   ' Mettre à jour la ComboBox
                     UpdateModuleJoueur(Pseudo)    ' Mettre à jours le module
                 Else
-                    UpdateModuleJoueur(Pseudo)
+                    UpdateModuleJoueur(Pseudo)  'Actualise les stats du joueurs s'il existe déjà
                 End If
             End If
-            Form2.Show()
+            JeuSudoku.Show()
             Me.Hide()
         End If
     End Sub
 
+    'Méthode qui prends en paramètre le pseudo du joueurs pour le crée dans le module en lui mettant des stats par défaut
     Private Sub UpdateModuleJoueur(Pseudo As String)
         Dim index As Integer = ModuleJoueur.TrouverJoueur(Pseudo)
         If index = -1 Then
@@ -69,20 +70,21 @@
         End If
     End Sub
 
+    'Méthode qui met à jours la liste de la comboBox
     Private Sub UpdateComboBoxItemsF1()
         nameComboBox1.Items.Clear()
         nameComboBox1.Items.AddRange(itemsListComboBoxF1.ToArray())
-
     End Sub
 
+
     Private Sub ScoreButton1_Click(sender As Object, e As EventArgs) Handles ScoreButton1.Click
-        Form3.Show()
+        StatSudoku.Show()
         Me.Hide()
     End Sub
 
     Private Sub ButtonParametre_Click(sender As Object, e As EventArgs) Handles ButtonParametre.Click
         Me.Hide()
-        Form4.Show()
+        ParametreSudoku.Show()
     End Sub
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption

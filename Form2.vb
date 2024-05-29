@@ -1,10 +1,10 @@
 ﻿Imports System.Media
 
-Public Class Form2
+Public Class JeuSudoku
 
     Private remainingTime As TimeSpan
     Private initialTime As TimeSpan = TimeSpan.FromMinutes(7)
-    Private Difficulte As Integer = 81 - 55
+    Private Difficulte As Integer = 81 - 55 'Difficulté par defaut réglé à 26 case vide
     Private CurrentBackground As String
     Private CurrentColorScheme As String
     Public IsDark As Boolean
@@ -15,12 +15,13 @@ Public Class Form2
     Dim darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
     Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
     Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
+
     ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
     Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
 
     ' Utiliser SoundPlayer pour lire le fichier WAV
     Dim player As New SoundPlayer(wavFilePath)
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub JeuSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
                 Dim textBox As New TextBox
@@ -34,16 +35,17 @@ Public Class Form2
             Next
         Next
         GenerateSudoku()
-        StartTimmerGame()
-        IsDark = Form1.IsDark
+        StartTimerGame()
+        IsDark = MenuSudoku.IsDark
         If IsDark Then
             ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
         End If
         ApplyMapCustomization()
-        LabelPseudo.Text = Form1.nameComboBox1.Text
+        LabelPseudo.Text = MenuSudoku.nameComboBox1.Text
 
     End Sub
 
+    'Change le thème du fond en jeu
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         ApplyMapCustomization()
@@ -85,12 +87,14 @@ Public Class Form2
         Next
     End Sub
 
+    'méthode qui règle la variable remainingTime, et prends en comptes les changements effectuer par le joueur dans les paramètres 
     Public Sub SetTimerInterval(minutes As Integer)
         initialTime = TimeSpan.FromMinutes(minutes)
         remainingTime = initialTime
         LabelTimer.Text = "Temps restant : " & remainingTime.ToString("mm\:ss")
     End Sub
 
+    'méthode qui affiche le timer sur le label avec les tick, et met fin à la partie lorsqu'il y a une fin de game
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1))
         LabelTimer.Text = "Temps restant : " & remainingTime.ToString("mm\:ss")
@@ -99,12 +103,13 @@ Public Class Form2
             FinDePartieSiLoose()
             Timer1.Stop()
             MessageBox.Show("Le temps est écoulé! Fin de la partie vous avez perdu")
-            Form1.Show()
+            MenuSudoku.Show()
             Me.Close()
         End If
     End Sub
 
-    Private Sub StartTimmerGame()
+    'lance le timer de la partie
+    Private Sub StartTimerGame()
         Timer1.Interval = 1000
         remainingTime = initialTime
         LabelTimer.Text = "Temps restant :"
@@ -112,6 +117,7 @@ Public Class Form2
         Timer1.Enabled = True
     End Sub
 
+    'verifie le chiffre placé dans une textBox et met en rouge si le chiffre est invalid
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs)
         Dim txtBox As TextBox = CType(sender, TextBox)
         Dim ligneIndex As Integer = TableLayoutPanel1.GetRow(txtBox)
@@ -135,6 +141,7 @@ Public Class Form2
         AddHandler txtBox.TextChanged, AddressOf TextBox_TextChanged
     End Sub
 
+    'Méthode qui vérifie le placement sur la ligne/colonne/régions du chiffre
     Private Function IsValidEntry(valeur As String, ligne As Integer, colonne As Integer) As Boolean
         If Not Char.IsDigit(valeur) OrElse valeur = "" Then
             Return False
@@ -176,6 +183,7 @@ Public Class Form2
         Return True
     End Function
 
+    'Applique la difficulté choisi par le joueurs dans le formulaire des paramètre
     Public Sub ChangeDifficulte(valeur As Integer)
         Difficulte = valeur
     End Sub
@@ -247,17 +255,17 @@ Public Class Form2
         MessageBox.Show("Félicitations, vous avez complété le Sudoku!", "Partie terminée", MessageBoxButtons.OK, MessageBoxIcon.Information)
         FinDePartieSiWin()
         Timer1.Stop()
-        Form1.Show()
+        MenuSudoku.Show()
         Me.Close()
     End Sub
 
     Private Sub FinDePartieSiLoose()
-        Dim nomJoueur As String = Form1.nameComboBox1.Text
+        Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
         Dim tempsEcoule As TimeSpan = initialTime - remainingTime
         ModuleJoueur.MettreAJourJoueurSiLoose(nomJoueur, tempsEcoule)
     End Sub
     Private Sub FinDePartieSiWin()
-        Dim nomJoueur As String = Form1.nameComboBox1.Text
+        Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
         Dim tempsEcoule As TimeSpan = initialTime - remainingTime
         ModuleJoueur.MettreAJourJoueurSiWin(nomJoueur, tempsEcoule)
     End Sub
@@ -268,7 +276,7 @@ Public Class Form2
             player.Stop()
             FinDePartieSiLoose()
             Me.Close()
-            Form1.Show()
+            MenuSudoku.Show()
         End If
     End Sub
 
@@ -285,6 +293,7 @@ Public Class Form2
         PlayButton.Visible = False
         PauseButton.Visible = True
     End Sub
+    'Change les couleurs en fonctions du thème choisis par le joueur
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
         ' Changez les autres propriétés de contrôle si nécessaire

@@ -1,4 +1,4 @@
-﻿Public Class Form4
+﻿Public Class ParametreSudoku
     Dim input As String
     Dim minute As Integer
     Dim timeInterval As TimeSpan
@@ -8,11 +8,11 @@
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
         Me.Close()
-        Form1.Show()
+        MenuSudoku.Show()
     End Sub
 
-    Private Sub Form4_Load(sender As Object, e As EventArgs) Handles Me.Load
-        isDarkMode = Form1.IsDark
+    Private Sub ParametreSudoku_Load(sender As Object, e As EventArgs) Handles Me.Load
+        isDarkMode = MenuSudoku.IsDark
         If isDarkMode Then
             Button1.BackgroundImage = My.Resources.Lightmod
             SetDark()
@@ -21,61 +21,67 @@
         End If
     End Sub
 
+    'méthode qui met à jours le timer en fonction du choix du joueur
     Private Sub ChangeTimerButton_Click(sender As Object, e As EventArgs) Handles ChangeTimerButton.Click
         input = InputBox("Combien de temps voulez-vous mettre (en minutes) :")
         If IsNumeric(input) Then
             minute = CInt(input)
             timeInterval = TimeSpan.FromMinutes(minute)
-            Form2.SetTimerInterval(minute)
+            JeuSudoku.SetTimerInterval(minute)
             MsgBox("L'intervalle du timer a été modifié à " & minute & " minute(s).")
         Else
             MsgBox("Veuillez entrer un nombre valide.")
         End If
     End Sub
 
+    'RadioButton qui applique la difficulté choisi par le joueur
     Private Sub RadioButtonFacile_Click(sender As Object, e As EventArgs) Handles RadioButtonFacile.Click
         If RadioButtonFacile.Checked Then
             difficulte = 81 - 65
-            Form2.ChangeDifficulte(difficulte)
+            JeuSudoku.ChangeDifficulte(difficulte)
         End If
     End Sub
+    'RadioButton qui applique la difficulté choisi par le joueur
     Private Sub RadioButtonMoyen_Click(sender As Object, e As EventArgs) Handles RadioButtonMoyen.Click
         If RadioButtonMoyen.Checked Then
             difficulte = 81 - 55
-            Form2.ChangeDifficulte(difficulte)
+            JeuSudoku.ChangeDifficulte(difficulte)
         End If
     End Sub
+    'RadioButton qui applique la difficulté choisi par le joueur
     Private Sub RadioButtonDifficile_Click(sender As Object, e As EventArgs) Handles RadioButtonDifficile.Click
         If RadioButtonDifficile.Checked Then
             difficulte = 81 - 40
-            Form2.ChangeDifficulte(difficulte)
+            JeuSudoku.ChangeDifficulte(difficulte)
         End If
     End Sub
-
+    'RadioButton qui applique la difficulté choisi par le joueur
     Private Sub RadioButtonHard_Click(sender As Object, e As EventArgs) Handles RadioButtonHard.Click
         If RadioButtonHard.Checked Then
             difficulte = 81 - 20
-            Form2.ChangeDifficulte(difficulte)
-            'modif
+            JeuSudoku.ChangeDifficulte(difficulte)
         End If
     End Sub
 
+    'RadioButton qui applique la thème choisi par le joueur
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
         If RadioButton4.Checked Then
             SelectedMap = "RIVER"
             ApplyMapChanges()
         End If
     End Sub
+    'RadioButton qui applique la thème choisi par le joueur
     Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
         If RadioButton5.Checked Then
             SelectedMap = "SNOW"
             ApplyMapChanges()
         End If
     End Sub
+    'RadioButton qui applique la thème choisi par le joueur
     Private Sub ApplyMapChanges()
-        Form2.ChangeMap(SelectedMap)
+        JeuSudoku.ChangeMap(SelectedMap)
     End Sub
-
+    'Button DarkMode
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         isDarkMode = Not isDarkMode
         If isDarkMode Then
@@ -84,49 +90,49 @@
             Button1.BackgroundImage = My.Resources.Darkmod
         End If
         UpdateMenu()
-        Form1.IsDark = Not Form1.IsDark
+        MenuSudoku.IsDark = Not MenuSudoku.IsDark
 
     End Sub
 
     Private Sub UpdateMenu()
         If isDarkMode Then
-            Form1.BackColor = Form1.darkBackground
-            Form1.Label1.ForeColor = Form1.highlight4
-            Form1.nameLabel.ForeColor = Form1.highlight4
-            Form1.nameComboBox1.BackColor = Form1.darkAccent1
-            Form1.nameComboBox1.ForeColor = Form1.highlight4
-            Form1.playButton.ForeColor = Form1.highlight4
-            Form1.ScoreButton1.ForeColor = Form1.highlight4
-            Form1.ButtonParametre.ForeColor = Form1.highlight4
-            Form1.leaveBoutton.ForeColor = Form1.highlight4
-            Form1.playButton.BackColor = Form1.darkAccent2
-            Form1.ScoreButton1.BackColor = Form1.darkAccent2
-            Form1.ButtonParametre.BackColor = Form1.darkAccent2
-            Form1.leaveBoutton.BackColor = Form1.darkAccent2
+            MenuSudoku.BackColor = MenuSudoku.darkBackground
+            MenuSudoku.Label1.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.nameLabel.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.nameComboBox1.BackColor = MenuSudoku.darkAccent1
+            MenuSudoku.nameComboBox1.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.playButton.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.ScoreButton1.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.ButtonParametre.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.leaveBoutton.ForeColor = MenuSudoku.highlight4
+            MenuSudoku.playButton.BackColor = MenuSudoku.darkAccent2
+            MenuSudoku.ScoreButton1.BackColor = MenuSudoku.darkAccent2
+            MenuSudoku.ButtonParametre.BackColor = MenuSudoku.darkAccent2
+            MenuSudoku.leaveBoutton.BackColor = MenuSudoku.darkAccent2
             SetDark()
         Else
             ApplyLightTheme()
-            Form2.ApplyLightTheme()
-            Form3.ApplyLightTheme()
-            Form1.ApplyLightTheme()
+            JeuSudoku.ApplyLightTheme()
+            MenuSudoku.ApplyLightTheme()
+            StatSudoku.ApplyLightTheme()
         End If
     End Sub
 
     Private Sub SetDark()
-        Me.BackColor = Form1.darkBackground
-        Me.Label1.ForeColor = Form1.highlight4
-        Me.Label3.ForeColor = Form1.highlight4
-        Me.Label4.ForeColor = Form1.highlight4
-        Me.Label5.ForeColor = Form1.highlight4
-        Me.ChangeTimerButton.BackColor = Form1.darkAccent2
-        Me.LeaveButton.BackColor = Form1.darkAccent2
-        Me.Button1.BackColor = Form1.darkAccent2
-        Me.LeaveButton.ForeColor = Form1.highlight4
-        Me.RadioButtonFacile.ForeColor = Form1.highlight4
-        Me.RadioButtonMoyen.ForeColor = Form1.highlight4
-        Me.RadioButtonDifficile.ForeColor = Form1.highlight4
-        Me.RadioButton4.ForeColor = Form1.highlight4
-        Me.RadioButton5.ForeColor = Form1.highlight4
+        Me.BackColor = MenuSudoku.darkBackground
+        Me.Label1.ForeColor = MenuSudoku.highlight4
+        Me.Label3.ForeColor = MenuSudoku.highlight4
+        Me.Label4.ForeColor = MenuSudoku.highlight4
+        Me.Label5.ForeColor = MenuSudoku.highlight4
+        Me.ChangeTimerButton.BackColor = MenuSudoku.darkAccent2
+        Me.LeaveButton.BackColor = MenuSudoku.darkAccent2
+        Me.Button1.BackColor = MenuSudoku.darkAccent2
+        Me.LeaveButton.ForeColor = MenuSudoku.highlight4
+        Me.RadioButtonFacile.ForeColor = MenuSudoku.highlight4
+        Me.RadioButtonMoyen.ForeColor = MenuSudoku.highlight4
+        Me.RadioButtonDifficile.ForeColor = MenuSudoku.highlight4
+        Me.RadioButton4.ForeColor = MenuSudoku.highlight4
+        Me.RadioButton5.ForeColor = MenuSudoku.highlight4
     End Sub
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
@@ -147,15 +153,17 @@
         Me.RadioButton5.ForeColor = DefaultForeColor
     End Sub
 
+    'Bouton qui fait choisir au joueurs le choix d'emplacement de sa sauvegarde
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Folderbrowser()
     End Sub
-
+    'Bouton qui fait choisir au joueurs l'emplacement de sa sauvegarde pour la charger
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Folderbrowser()
         ModuleJoueur.ChargerJoueursDepuisFichier("joueurs.txt")
     End Sub
 
+    'méthode qui met a jours le chemin de la save ou charge du save en fonctions du joueurs
     Public Sub Folderbrowser()
         Using dossierDialog As New FolderBrowserDialog()
             If dossierDialog.ShowDialog() = DialogResult.OK Then

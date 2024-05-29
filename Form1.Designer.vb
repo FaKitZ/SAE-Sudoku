@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MenuSudoku
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -52,7 +52,7 @@ Partial Class Form1
         Me.nameComboBox1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.nameComboBox1.FormattingEnabled = True
         Me.nameComboBox1.Location = New System.Drawing.Point(81, 35)
-        Me.nameComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.nameComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.nameComboBox1.Name = "nameComboBox1"
         Me.nameComboBox1.Size = New System.Drawing.Size(104, 21)
         Me.nameComboBox1.TabIndex = 1
@@ -70,9 +70,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.nameLabel)
         Me.GroupBox1.Controls.Add(Me.nameComboBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(40, 38)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(269, 180)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
@@ -82,7 +82,7 @@ Partial Class Form1
         Me.ButtonParametre.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.ButtonParametre.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonParametre.Location = New System.Drawing.Point(70, 132)
-        Me.ButtonParametre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ButtonParametre.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonParametre.MaximumSize = New System.Drawing.Size(75, 28)
         Me.ButtonParametre.Name = "ButtonParametre"
         Me.ButtonParametre.Size = New System.Drawing.Size(64, 28)
@@ -95,7 +95,7 @@ Partial Class Form1
         Me.ScoreButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.ScoreButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ScoreButton1.Location = New System.Drawing.Point(101, 92)
-        Me.ScoreButton1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ScoreButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.ScoreButton1.MaximumSize = New System.Drawing.Size(75, 28)
         Me.ScoreButton1.Name = "ScoreButton1"
         Me.ScoreButton1.Size = New System.Drawing.Size(64, 28)
@@ -108,7 +108,7 @@ Partial Class Form1
         Me.leaveBoutton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.leaveBoutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.leaveBoutton.Location = New System.Drawing.Point(139, 132)
-        Me.leaveBoutton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.leaveBoutton.Margin = New System.Windows.Forms.Padding(2)
         Me.leaveBoutton.MaximumSize = New System.Drawing.Size(75, 28)
         Me.leaveBoutton.Name = "leaveBoutton"
         Me.leaveBoutton.Size = New System.Drawing.Size(64, 28)
@@ -121,7 +121,7 @@ Partial Class Form1
         Me.playButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.playButton.Location = New System.Drawing.Point(101, 67)
-        Me.playButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.playButton.Margin = New System.Windows.Forms.Padding(2)
         Me.playButton.MaximumSize = New System.Drawing.Size(75, 28)
         Me.playButton.Name = "playButton"
         Me.playButton.Size = New System.Drawing.Size(64, 28)
@@ -143,7 +143,7 @@ Partial Class Form1
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Menu Sudoku"
         '
-        'Form1
+        'MenuSudoku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -151,8 +151,8 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(354, 243)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "Form1"
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Name = "MenuSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
         Me.GroupBox1.ResumeLayout(False)
