@@ -46,9 +46,10 @@ Partial Class JeuSudoku
         '
         Me.LabelTimer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelTimer.AutoSize = True
-        Me.LabelTimer.Location = New System.Drawing.Point(511, 101)
+        Me.LabelTimer.Location = New System.Drawing.Point(681, 124)
+        Me.LabelTimer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelTimer.Name = "LabelTimer"
-        Me.LabelTimer.Size = New System.Drawing.Size(67, 13)
+        Me.LabelTimer.Size = New System.Drawing.Size(87, 16)
         Me.LabelTimer.TabIndex = 1
         Me.LabelTimer.Text = "LabelTimmer"
         '
@@ -56,9 +57,10 @@ Partial Class JeuSudoku
         '
         Me.LabelPseudo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelPseudo.AutoSize = True
-        Me.LabelPseudo.Location = New System.Drawing.Point(511, 64)
+        Me.LabelPseudo.Location = New System.Drawing.Point(681, 79)
+        Me.LabelPseudo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelPseudo.Name = "LabelPseudo"
-        Me.LabelPseudo.Size = New System.Drawing.Size(69, 13)
+        Me.LabelPseudo.Size = New System.Drawing.Size(88, 16)
         Me.LabelPseudo.TabIndex = 2
         Me.LabelPseudo.Text = "LabelPseudo"
         '
@@ -66,9 +68,10 @@ Partial Class JeuSudoku
         '
         Me.pseudoLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pseudoLabel.AutoSize = True
-        Me.pseudoLabel.Location = New System.Drawing.Point(511, 30)
+        Me.pseudoLabel.Location = New System.Drawing.Point(681, 37)
+        Me.pseudoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.pseudoLabel.Name = "pseudoLabel"
-        Me.pseudoLabel.Size = New System.Drawing.Size(96, 13)
+        Me.pseudoLabel.Size = New System.Drawing.Size(118, 16)
         Me.pseudoLabel.TabIndex = 3
         Me.pseudoLabel.Text = "Pseudo du joueur :"
         '
@@ -77,9 +80,10 @@ Partial Class JeuSudoku
         Me.leaveButon.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.leaveButon.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.leaveButon.ForeColor = System.Drawing.Color.Black
-        Me.leaveButon.Location = New System.Drawing.Point(511, 207)
+        Me.leaveButon.Location = New System.Drawing.Point(681, 255)
+        Me.leaveButon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leaveButon.Name = "leaveButon"
-        Me.leaveButon.Size = New System.Drawing.Size(91, 29)
+        Me.leaveButon.Size = New System.Drawing.Size(121, 36)
         Me.leaveButon.TabIndex = 4
         Me.leaveButon.Text = "Back to menu"
         Me.leaveButon.UseVisualStyleBackColor = False
@@ -88,9 +92,10 @@ Partial Class JeuSudoku
         '
         Me.PauseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PauseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PauseButton.Location = New System.Drawing.Point(511, 152)
+        Me.PauseButton.Location = New System.Drawing.Point(681, 187)
+        Me.PauseButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PauseButton.Name = "PauseButton"
-        Me.PauseButton.Size = New System.Drawing.Size(91, 22)
+        Me.PauseButton.Size = New System.Drawing.Size(121, 27)
         Me.PauseButton.TabIndex = 5
         Me.PauseButton.Text = "Pause"
         Me.PauseButton.UseVisualStyleBackColor = False
@@ -99,9 +104,10 @@ Partial Class JeuSudoku
         '
         Me.PlayButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PlayButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PlayButton.Location = New System.Drawing.Point(511, 152)
+        Me.PlayButton.Location = New System.Drawing.Point(681, 187)
+        Me.PlayButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(91, 22)
+        Me.PlayButton.Size = New System.Drawing.Size(121, 27)
         Me.PlayButton.TabIndex = 6
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
@@ -112,9 +118,10 @@ Partial Class JeuSudoku
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(453, 377)
+        Me.PictureBox1.Location = New System.Drawing.Point(604, 464)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(199, 204)
+        Me.PictureBox1.Size = New System.Drawing.Size(265, 251)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -135,10 +142,10 @@ Partial Class JeuSudoku
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(14, 21)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TableLayoutPanel1.MaximumSize = New System.Drawing.Size(470, 448)
-        Me.TableLayoutPanel1.MinimumSize = New System.Drawing.Size(470, 441)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 26)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TableLayoutPanel1.MaximumSize = New System.Drawing.Size(627, 551)
+        Me.TableLayoutPanel1.MinimumSize = New System.Drawing.Size(627, 543)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 9
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
@@ -150,15 +157,16 @@ Partial Class JeuSudoku
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(470, 441)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(627, 543)
         Me.TableLayoutPanel1.TabIndex = 10
         '
         'ButtonMusic
         '
         Me.ButtonMusic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonMusic.Location = New System.Drawing.Point(511, 180)
+        Me.ButtonMusic.Location = New System.Drawing.Point(681, 222)
+        Me.ButtonMusic.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonMusic.Name = "ButtonMusic"
-        Me.ButtonMusic.Size = New System.Drawing.Size(91, 23)
+        Me.ButtonMusic.Size = New System.Drawing.Size(121, 28)
         Me.ButtonMusic.TabIndex = 11
         Me.ButtonMusic.Text = "MUSIC ON"
         Me.ButtonMusic.UseVisualStyleBackColor = True
@@ -166,9 +174,10 @@ Partial Class JeuSudoku
         'ButtonMusicOFF
         '
         Me.ButtonMusicOFF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonMusicOFF.Location = New System.Drawing.Point(511, 180)
+        Me.ButtonMusicOFF.Location = New System.Drawing.Point(681, 222)
+        Me.ButtonMusicOFF.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonMusicOFF.Name = "ButtonMusicOFF"
-        Me.ButtonMusicOFF.Size = New System.Drawing.Size(91, 23)
+        Me.ButtonMusicOFF.Size = New System.Drawing.Size(121, 28)
         Me.ButtonMusicOFF.TabIndex = 0
         Me.ButtonMusicOFF.Text = "MUSIC OFF"
         Me.ButtonMusicOFF.UseVisualStyleBackColor = True
@@ -176,11 +185,11 @@ Partial Class JeuSudoku
         '
         'JeuSudoku
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(650, 580)
+        Me.ClientSize = New System.Drawing.Size(882, 751)
         Me.Controls.Add(Me.ButtonMusicOFF)
         Me.Controls.Add(Me.ButtonMusic)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -192,7 +201,8 @@ Partial Class JeuSudoku
         Me.Controls.Add(Me.LabelTimer)
         Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
-        Me.MinimumSize = New System.Drawing.Size(666, 619)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MinimumSize = New System.Drawing.Size(882, 751)
         Me.Name = "JeuSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"

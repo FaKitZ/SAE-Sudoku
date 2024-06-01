@@ -48,10 +48,10 @@ Partial Class ParametreSudoku
         'LeaveButton
         '
         Me.LeaveButton.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.LeaveButton.Location = New System.Drawing.Point(374, 180)
-        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.LeaveButton.Location = New System.Drawing.Point(499, 222)
+        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LeaveButton.Name = "LeaveButton"
-        Me.LeaveButton.Size = New System.Drawing.Size(136, 20)
+        Me.LeaveButton.Size = New System.Drawing.Size(181, 25)
         Me.LeaveButton.TabIndex = 8
         Me.LeaveButton.Text = "Back to menu"
         Me.LeaveButton.UseVisualStyleBackColor = False
@@ -59,20 +59,19 @@ Partial Class ParametreSudoku
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 66)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(41, 81)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 13)
+        Me.Label1.Size = New System.Drawing.Size(138, 16)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Temps (defaut 7min) : "
         '
         'RadioButtonFacile
         '
         Me.RadioButtonFacile.AutoSize = True
-        Me.RadioButtonFacile.Location = New System.Drawing.Point(14, 25)
-        Me.RadioButtonFacile.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonFacile.Location = New System.Drawing.Point(19, 31)
+        Me.RadioButtonFacile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButtonFacile.Name = "RadioButtonFacile"
-        Me.RadioButtonFacile.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButtonFacile.Size = New System.Drawing.Size(65, 20)
         Me.RadioButtonFacile.TabIndex = 12
         Me.RadioButtonFacile.TabStop = True
         Me.RadioButtonFacile.Text = "Facile"
@@ -81,10 +80,10 @@ Partial Class ParametreSudoku
         'RadioButtonMoyen
         '
         Me.RadioButtonMoyen.AutoSize = True
-        Me.RadioButtonMoyen.Location = New System.Drawing.Point(68, 25)
-        Me.RadioButtonMoyen.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonMoyen.Location = New System.Drawing.Point(91, 31)
+        Me.RadioButtonMoyen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButtonMoyen.Name = "RadioButtonMoyen"
-        Me.RadioButtonMoyen.Size = New System.Drawing.Size(56, 17)
+        Me.RadioButtonMoyen.Size = New System.Drawing.Size(69, 20)
         Me.RadioButtonMoyen.TabIndex = 13
         Me.RadioButtonMoyen.TabStop = True
         Me.RadioButtonMoyen.Text = "moyen"
@@ -93,10 +92,10 @@ Partial Class ParametreSudoku
         'RadioButtonDifficile
         '
         Me.RadioButtonDifficile.AutoSize = True
-        Me.RadioButtonDifficile.Location = New System.Drawing.Point(124, 25)
-        Me.RadioButtonDifficile.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonDifficile.Location = New System.Drawing.Point(165, 31)
+        Me.RadioButtonDifficile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButtonDifficile.Name = "RadioButtonDifficile"
-        Me.RadioButtonDifficile.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButtonDifficile.Size = New System.Drawing.Size(71, 20)
         Me.RadioButtonDifficile.TabIndex = 14
         Me.RadioButtonDifficile.TabStop = True
         Me.RadioButtonDifficile.Text = "Difficile"
@@ -105,10 +104,10 @@ Partial Class ParametreSudoku
         'ChangeTimerButton
         '
         Me.ChangeTimerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ChangeTimerButton.Location = New System.Drawing.Point(148, 59)
-        Me.ChangeTimerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ChangeTimerButton.Location = New System.Drawing.Point(197, 73)
+        Me.ChangeTimerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChangeTimerButton.Name = "ChangeTimerButton"
-        Me.ChangeTimerButton.Size = New System.Drawing.Size(56, 27)
+        Me.ChangeTimerButton.Size = New System.Drawing.Size(75, 33)
         Me.ChangeTimerButton.TabIndex = 15
         Me.ChangeTimerButton.Text = "Changer"
         Me.ChangeTimerButton.UseVisualStyleBackColor = True
@@ -118,10 +117,9 @@ Partial Class ParametreSudoku
         Me.Label5.AutoSize = True
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 18.0!)
-        Me.Label5.Location = New System.Drawing.Point(200, 9)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(267, 11)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 34)
+        Me.Label5.Size = New System.Drawing.Size(167, 43)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Paramètres"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -130,10 +128,10 @@ Partial Class ParametreSudoku
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton4.Location = New System.Drawing.Point(18, 18)
-        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButton4.Location = New System.Drawing.Point(24, 22)
+        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(58, 17)
+        Me.RadioButton4.Size = New System.Drawing.Size(69, 20)
         Me.RadioButton4.TabIndex = 19
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "RIVER"
@@ -142,10 +140,10 @@ Partial Class ParametreSudoku
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(74, 18)
-        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButton5.Location = New System.Drawing.Point(99, 22)
+        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButton5.Size = New System.Drawing.Size(70, 20)
         Me.RadioButton5.TabIndex = 20
         Me.RadioButton5.TabStop = True
         Me.RadioButton5.Text = "SNOW"
@@ -158,36 +156,39 @@ Partial Class ParametreSudoku
         Me.ButtonDarkMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonDarkMode.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.ButtonDarkMode.Location = New System.Drawing.Point(247, 158)
-        Me.ButtonDarkMode.Margin = New System.Windows.Forms.Padding(2)
+        Me.ButtonDarkMode.Location = New System.Drawing.Point(329, 194)
+        Me.ButtonDarkMode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonDarkMode.Name = "ButtonDarkMode"
-        Me.ButtonDarkMode.Size = New System.Drawing.Size(52, 42)
+        Me.ButtonDarkMode.Size = New System.Drawing.Size(69, 52)
         Me.ButtonDarkMode.TabIndex = 21
         Me.ButtonDarkMode.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(375, 66)
+        Me.Label2.Location = New System.Drawing.Point(500, 81)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 13)
+        Me.Label2.Size = New System.Drawing.Size(167, 16)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Choix du dossier info stats :"
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(374, 94)
+        Me.Button2.Location = New System.Drawing.Point(499, 116)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(136, 25)
+        Me.Button2.Size = New System.Drawing.Size(181, 31)
         Me.Button2.TabIndex = 23
         Me.Button2.Text = "Chemin du dossier"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(374, 132)
+        Me.Button3.Location = New System.Drawing.Point(499, 162)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(136, 24)
+        Me.Button3.Size = New System.Drawing.Size(181, 30)
         Me.Button3.TabIndex = 24
         Me.Button3.Text = "Charger une save"
         Me.Button3.UseVisualStyleBackColor = True
@@ -195,10 +196,10 @@ Partial Class ParametreSudoku
         'RadioButtonHard
         '
         Me.RadioButtonHard.AutoSize = True
-        Me.RadioButtonHard.Location = New System.Drawing.Point(187, 25)
-        Me.RadioButtonHard.Margin = New System.Windows.Forms.Padding(2)
+        Me.RadioButtonHard.Location = New System.Drawing.Point(249, 31)
+        Me.RadioButtonHard.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadioButtonHard.Name = "RadioButtonHard"
-        Me.RadioButtonHard.Size = New System.Drawing.Size(95, 17)
+        Me.RadioButtonHard.Size = New System.Drawing.Size(116, 20)
         Me.RadioButtonHard.TabIndex = 25
         Me.RadioButtonHard.TabStop = True
         Me.RadioButtonHard.Text = "Paix à ton âme"
@@ -210,9 +211,11 @@ Partial Class ParametreSudoku
         Me.GroupBoxDifficulte.Controls.Add(Me.RadioButtonFacile)
         Me.GroupBoxDifficulte.Controls.Add(Me.RadioButtonMoyen)
         Me.GroupBoxDifficulte.Controls.Add(Me.RadioButtonDifficile)
-        Me.GroupBoxDifficulte.Location = New System.Drawing.Point(34, 89)
+        Me.GroupBoxDifficulte.Location = New System.Drawing.Point(45, 110)
+        Me.GroupBoxDifficulte.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBoxDifficulte.Name = "GroupBoxDifficulte"
-        Me.GroupBoxDifficulte.Size = New System.Drawing.Size(287, 58)
+        Me.GroupBoxDifficulte.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxDifficulte.Size = New System.Drawing.Size(383, 71)
         Me.GroupBoxDifficulte.TabIndex = 26
         Me.GroupBoxDifficulte.TabStop = False
         Me.GroupBoxDifficulte.Text = "Difficulte"
@@ -221,19 +224,22 @@ Partial Class ParametreSudoku
         '
         Me.GroupBoxMap.Controls.Add(Me.RadioButton5)
         Me.GroupBoxMap.Controls.Add(Me.RadioButton4)
-        Me.GroupBoxMap.Location = New System.Drawing.Point(34, 153)
+        Me.GroupBoxMap.Location = New System.Drawing.Point(45, 188)
+        Me.GroupBoxMap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBoxMap.Name = "GroupBoxMap"
-        Me.GroupBoxMap.Size = New System.Drawing.Size(159, 47)
+        Me.GroupBoxMap.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxMap.Size = New System.Drawing.Size(212, 58)
         Me.GroupBoxMap.TabIndex = 27
         Me.GroupBoxMap.TabStop = False
         Me.GroupBoxMap.Text = "Map"
         '
         'ParametreSudoku
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(546, 236)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(728, 290)
         Me.Controls.Add(Me.GroupBoxMap)
         Me.Controls.Add(Me.GroupBoxDifficulte)
         Me.Controls.Add(Me.Button3)
@@ -244,8 +250,8 @@ Partial Class ParametreSudoku
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.ButtonDarkMode)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(562, 275)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MinimumSize = New System.Drawing.Size(743, 328)
         Me.Name = "ParametreSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"

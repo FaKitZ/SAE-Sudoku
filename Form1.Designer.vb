@@ -37,10 +37,9 @@ Partial Class MenuSudoku
         '
         Me.nameLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.nameLabel.AutoSize = True
-        Me.nameLabel.Location = New System.Drawing.Point(94, 20)
-        Me.nameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.nameLabel.Location = New System.Drawing.Point(125, 25)
         Me.nameLabel.Name = "nameLabel"
-        Me.nameLabel.Size = New System.Drawing.Size(76, 13)
+        Me.nameLabel.Size = New System.Drawing.Size(94, 16)
         Me.nameLabel.TabIndex = 0
         Me.nameLabel.Text = "Nom du joueur"
         '
@@ -51,10 +50,10 @@ Partial Class MenuSudoku
         Me.nameComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.nameComboBox1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.nameComboBox1.FormattingEnabled = True
-        Me.nameComboBox1.Location = New System.Drawing.Point(81, 35)
-        Me.nameComboBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.nameComboBox1.Location = New System.Drawing.Point(108, 43)
+        Me.nameComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.nameComboBox1.Name = "nameComboBox1"
-        Me.nameComboBox1.Size = New System.Drawing.Size(104, 21)
+        Me.nameComboBox1.Size = New System.Drawing.Size(137, 24)
         Me.nameComboBox1.TabIndex = 1
         '
         'GroupBox1
@@ -69,11 +68,11 @@ Partial Class MenuSudoku
         Me.GroupBox1.Controls.Add(Me.playButton)
         Me.GroupBox1.Controls.Add(Me.nameLabel)
         Me.GroupBox1.Controls.Add(Me.nameComboBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 38)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Location = New System.Drawing.Point(53, 47)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(269, 180)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(359, 222)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
@@ -81,11 +80,11 @@ Partial Class MenuSudoku
         '
         Me.ButtonParametre.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.ButtonParametre.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ButtonParametre.Location = New System.Drawing.Point(70, 132)
-        Me.ButtonParametre.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonParametre.MaximumSize = New System.Drawing.Size(75, 28)
+        Me.ButtonParametre.Location = New System.Drawing.Point(93, 162)
+        Me.ButtonParametre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ButtonParametre.MaximumSize = New System.Drawing.Size(100, 34)
         Me.ButtonParametre.Name = "ButtonParametre"
-        Me.ButtonParametre.Size = New System.Drawing.Size(64, 28)
+        Me.ButtonParametre.Size = New System.Drawing.Size(85, 34)
         Me.ButtonParametre.TabIndex = 5
         Me.ButtonParametre.Text = "Paramètre"
         Me.ButtonParametre.UseVisualStyleBackColor = True
@@ -94,11 +93,11 @@ Partial Class MenuSudoku
         '
         Me.ScoreButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.ScoreButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ScoreButton1.Location = New System.Drawing.Point(101, 92)
-        Me.ScoreButton1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ScoreButton1.MaximumSize = New System.Drawing.Size(75, 28)
+        Me.ScoreButton1.Location = New System.Drawing.Point(135, 113)
+        Me.ScoreButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ScoreButton1.MaximumSize = New System.Drawing.Size(100, 34)
         Me.ScoreButton1.Name = "ScoreButton1"
-        Me.ScoreButton1.Size = New System.Drawing.Size(64, 28)
+        Me.ScoreButton1.Size = New System.Drawing.Size(85, 34)
         Me.ScoreButton1.TabIndex = 4
         Me.ScoreButton1.Text = "Scores"
         Me.ScoreButton1.UseVisualStyleBackColor = True
@@ -107,11 +106,11 @@ Partial Class MenuSudoku
         '
         Me.leaveBoutton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.leaveBoutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.leaveBoutton.Location = New System.Drawing.Point(139, 132)
-        Me.leaveBoutton.Margin = New System.Windows.Forms.Padding(2)
-        Me.leaveBoutton.MaximumSize = New System.Drawing.Size(75, 28)
+        Me.leaveBoutton.Location = New System.Drawing.Point(185, 162)
+        Me.leaveBoutton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.leaveBoutton.MaximumSize = New System.Drawing.Size(100, 34)
         Me.leaveBoutton.Name = "leaveBoutton"
-        Me.leaveBoutton.Size = New System.Drawing.Size(64, 28)
+        Me.leaveBoutton.Size = New System.Drawing.Size(85, 34)
         Me.leaveBoutton.TabIndex = 3
         Me.leaveBoutton.Text = "Exit"
         Me.leaveBoutton.UseVisualStyleBackColor = True
@@ -119,15 +118,16 @@ Partial Class MenuSudoku
         'playButton
         '
         Me.playButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.playButton.BackColor = System.Drawing.Color.Transparent
         Me.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.playButton.Location = New System.Drawing.Point(101, 67)
-        Me.playButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.playButton.MaximumSize = New System.Drawing.Size(75, 28)
+        Me.playButton.Location = New System.Drawing.Point(135, 82)
+        Me.playButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.playButton.MaximumSize = New System.Drawing.Size(100, 34)
         Me.playButton.Name = "playButton"
-        Me.playButton.Size = New System.Drawing.Size(64, 28)
+        Me.playButton.Size = New System.Drawing.Size(85, 34)
         Me.playButton.TabIndex = 2
         Me.playButton.Text = "Play"
-        Me.playButton.UseVisualStyleBackColor = True
+        Me.playButton.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -136,23 +136,23 @@ Partial Class MenuSudoku
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!)
-        Me.Label1.Location = New System.Drawing.Point(98, 8)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(131, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 32)
+        Me.Label1.Size = New System.Drawing.Size(204, 41)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Menu Sudoku"
         '
         'MenuSudoku
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(354, 243)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(472, 299)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(370, 282)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MinimumSize = New System.Drawing.Size(487, 336)
         Me.Name = "MenuSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
