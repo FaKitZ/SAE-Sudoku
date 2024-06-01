@@ -1,21 +1,10 @@
 ﻿Public Class StatSudoku
     Private joueurs As List(Of ModuleJoueur.JOUEUR)
-    Public IsDark As Boolean
+    Private CurrentBackground As String
 
 
     Private Sub StatSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ModuleJoueur.LoadData()
-        IsDark = MenuSudoku.IsDark
-        If IsDark Then
-            BackColor = MenuSudoku.darkBackground
-            ButtonStatsAvance.ForeColor = MenuSudoku.highlight4
-            ButtonStatsAvance.BackColor = MenuSudoku.darkAccent2
-            Label1.ForeColor = MenuSudoku.highlight4
-            Label2.ForeColor = MenuSudoku.highlight4
-            nameLabel1.ForeColor = MenuSudoku.highlight4
-            nbGameLabel3.ForeColor = MenuSudoku.highlight4
-            TimeLabel2.ForeColor = MenuSudoku.highlight4
-        End If
     End Sub
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
@@ -63,5 +52,18 @@
                 ctrl.ForeColor = DefaultForeColor
             End If
         Next
+    End Sub
+
+    Public Sub ChangeMap(background As String)
+        CurrentBackground = background
+        ApplyMapCustomization(CurrentBackground)
+    End Sub
+    Private Sub ApplyMapCustomization(CurrentBackground)
+        Select Case CurrentBackground
+            Case "RIVER"
+                Me.BackgroundImage = My.Resources.River
+            Case "SNOW"
+                Me.BackgroundImage = My.Resources.Neige
+        End Select
     End Sub
 End Class

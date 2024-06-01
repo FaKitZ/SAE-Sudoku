@@ -2,9 +2,21 @@
     Dim input As String
     Dim minute As Integer
     Dim timeInterval As TimeSpan
-    Dim difficulte As Integer = 71
+    Dim difficulte As Integer = 71 'difficulté par défaut (correspond au nombre de case vide à remplir)
     Dim SelectedMap As String
     Private isDarkMode As Boolean = False
+    Private CurrentBackground As String
+
+    'couleurs'
+    Public IsDark As Boolean
+    Private darkBackground As Color = Color.FromArgb(18, 18, 18)  ' Fond sombre
+    Private darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
+    Private darkAccent2 As Color = Color.FromArgb(72, 72, 72)     ' Accent sombre 2
+    Private darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
+    Private highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
+    Private highlight2 As Color = Color.FromArgb(255, 215, 0)     ' Jaune doré pour les points de mise en évidence
+    Private highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
+    Private highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
         Me.Close()
@@ -12,10 +24,10 @@
     End Sub
 
     Private Sub ParametreSudoku_Load(sender As Object, e As EventArgs) Handles Me.Load
-        isDarkMode = MenuSudoku.IsDark
+        isDarkMode = Me.IsDark
         If isDarkMode Then
-            Button1.BackgroundImage = My.Resources.Lightmod
-            SetDark()
+            ButtonDarkMode.BackgroundImage = My.Resources.Lightmod
+            SetDarkParametre()
         Else
             ApplyLightTheme()
         End If
@@ -67,49 +79,43 @@
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
         If RadioButton4.Checked Then
             SelectedMap = "RIVER"
-            ApplyMapChanges()
+            ApplyMapChanges(SelectedMap)
         End If
     End Sub
     'RadioButton qui applique la thème choisi par le joueur
     Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
         If RadioButton5.Checked Then
             SelectedMap = "SNOW"
-            ApplyMapChanges()
+            ApplyMapChanges(SelectedMap)
         End If
     End Sub
     'RadioButton qui applique la thème choisi par le joueur
-    Private Sub ApplyMapChanges()
+    Private Sub ApplyMapChanges(SelectedMap)
         JeuSudoku.ChangeMap(SelectedMap)
+        MenuSudoku.ChangeMap(SelectedMap)
+        StatSudoku.ChangeMap(SelectedMap)
+        Me.ChangeMap(SelectedMap)
     End Sub
+
     'Button DarkMode
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub ButtonDarkMode_Click(sender As Object, e As EventArgs) Handles ButtonDarkMode.Click
         isDarkMode = Not isDarkMode
+        JeuSudoku.IsDark = isDarkMode
         If isDarkMode Then
-            Button1.BackgroundImage = My.Resources.Lightmod
+            ButtonDarkMode.BackgroundImage = My.Resources.Lightmod
         Else
-            Button1.BackgroundImage = My.Resources.Darkmod
+            ButtonDarkMode.BackgroundImage = My.Resources.Darkmod
         End If
         UpdateMenu()
-        MenuSudoku.IsDark = Not MenuSudoku.IsDark
+        Me.IsDark = Not Me.IsDark
 
     End Sub
 
     Private Sub UpdateMenu()
         If isDarkMode Then
-            MenuSudoku.BackColor = MenuSudoku.darkBackground
-            MenuSudoku.Label1.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.nameLabel.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.nameComboBox1.BackColor = MenuSudoku.darkAccent1
-            MenuSudoku.nameComboBox1.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.playButton.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.ScoreButton1.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.ButtonParametre.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.leaveBoutton.ForeColor = MenuSudoku.highlight4
-            MenuSudoku.playButton.BackColor = MenuSudoku.darkAccent2
-            MenuSudoku.ScoreButton1.BackColor = MenuSudoku.darkAccent2
-            MenuSudoku.ButtonParametre.BackColor = MenuSudoku.darkAccent2
-            MenuSudoku.leaveBoutton.BackColor = MenuSudoku.darkAccent2
-            SetDark()
+            SetDarkParametre()
+            SetDarkMenu()
+            SetDarkStat()
         Else
             ApplyLightTheme()
             JeuSudoku.ApplyLightTheme()
@@ -118,21 +124,47 @@
         End If
     End Sub
 
-    Private Sub SetDark()
-        Me.BackColor = MenuSudoku.darkBackground
-        Me.Label1.ForeColor = MenuSudoku.highlight4
-        Me.Label3.ForeColor = MenuSudoku.highlight4
-        Me.Label4.ForeColor = MenuSudoku.highlight4
-        Me.Label5.ForeColor = MenuSudoku.highlight4
-        Me.ChangeTimerButton.BackColor = MenuSudoku.darkAccent2
-        Me.LeaveButton.BackColor = MenuSudoku.darkAccent2
-        Me.Button1.BackColor = MenuSudoku.darkAccent2
-        Me.LeaveButton.ForeColor = MenuSudoku.highlight4
-        Me.RadioButtonFacile.ForeColor = MenuSudoku.highlight4
-        Me.RadioButtonMoyen.ForeColor = MenuSudoku.highlight4
-        Me.RadioButtonDifficile.ForeColor = MenuSudoku.highlight4
-        Me.RadioButton4.ForeColor = MenuSudoku.highlight4
-        Me.RadioButton5.ForeColor = MenuSudoku.highlight4
+    Private Sub SetDarkParametre()
+        Me.BackColor = darkBackground
+        Me.Label1.ForeColor = highlight4
+        Me.Label2.ForeColor = highlight4
+        Me.Label5.ForeColor = highlight4
+        Me.GroupBoxDifficulte.ForeColor = highlight4
+        Me.GroupBoxMap.ForeColor = highlight4
+        Me.ChangeTimerButton.BackColor = darkAccent2
+        Me.LeaveButton.BackColor = darkAccent2
+        Me.ButtonDarkMode.BackColor = darkAccent2
+        Me.LeaveButton.ForeColor = highlight4
+        Me.RadioButtonFacile.ForeColor = highlight4
+        Me.RadioButtonMoyen.ForeColor = highlight4
+        Me.RadioButtonDifficile.ForeColor = highlight4
+        Me.RadioButton4.ForeColor = highlight4
+        Me.RadioButton5.ForeColor = highlight4
+    End Sub
+    Private Sub SetDarkMenu()
+        MenuSudoku.BackColor = darkBackground
+        MenuSudoku.Label1.ForeColor = highlight4
+        MenuSudoku.nameLabel.ForeColor = highlight4
+        MenuSudoku.nameComboBox1.BackColor = darkAccent1
+        MenuSudoku.nameComboBox1.ForeColor = highlight4
+        MenuSudoku.playButton.ForeColor = highlight4
+        MenuSudoku.ScoreButton1.ForeColor = highlight4
+        MenuSudoku.ButtonParametre.ForeColor = highlight4
+        MenuSudoku.leaveBoutton.ForeColor = highlight4
+        MenuSudoku.playButton.BackColor = darkAccent2
+        MenuSudoku.ScoreButton1.BackColor = darkAccent2
+        MenuSudoku.ButtonParametre.BackColor = darkAccent2
+        MenuSudoku.leaveBoutton.BackColor = darkAccent2
+    End Sub
+    Private Sub SetDarkStat()
+        StatSudoku.BackColor = darkBackground
+        StatSudoku.ButtonStatsAvance.ForeColor = highlight4
+        StatSudoku.ButtonStatsAvance.BackColor = darkAccent2
+        StatSudoku.Label1.ForeColor = highlight4
+        StatSudoku.Label2.ForeColor = highlight4
+        StatSudoku.nameLabel1.ForeColor = highlight4
+        StatSudoku.nbGameLabel3.ForeColor = highlight4
+        StatSudoku.TimeLabel2.ForeColor = highlight4
     End Sub
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
@@ -151,6 +183,19 @@
         Me.RadioButtonDifficile.ForeColor = DefaultForeColor
         Me.RadioButton4.ForeColor = DefaultForeColor
         Me.RadioButton5.ForeColor = DefaultForeColor
+    End Sub
+    Public Sub ChangeMap(background As String)
+        CurrentBackground = background
+        ApplyMapCustomization(CurrentBackground)
+    End Sub
+
+    Private Sub ApplyMapCustomization(CurrentBackground)
+        Select Case CurrentBackground
+            Case "RIVER"
+                Me.BackgroundImage = My.Resources.River
+            Case "SNOW"
+                Me.BackgroundImage = My.Resources.Neige
+        End Select
     End Sub
 
     'Bouton qui fait choisir au joueurs le choix d'emplacement de sa sauvegarde
@@ -172,6 +217,5 @@
             End If
         End Using
     End Sub
-
 
 End Class

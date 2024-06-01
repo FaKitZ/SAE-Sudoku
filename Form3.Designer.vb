@@ -197,6 +197,7 @@ Partial Class StatSudoku
         Me.Controls.Add(Me.ListBoxBestTimer)
         Me.Controls.Add(Me.ListBoxName)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(648, 250)
         Me.Name = "StatSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"

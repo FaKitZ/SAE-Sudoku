@@ -36,11 +36,11 @@ Public Class JeuSudoku
         Next
         GenerateSudoku()
         StartTimerGame()
-        IsDark = MenuSudoku.IsDark
+
         If IsDark Then
             ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
         End If
-        ApplyMapCustomization()
+        ApplyMapCustomization(CurrentBackground)
         LabelPseudo.Text = MenuSudoku.nameComboBox1.Text
 
     End Sub
@@ -48,10 +48,10 @@ Public Class JeuSudoku
     'Change le thème du fond en jeu
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
-        ApplyMapCustomization()
+        ApplyMapCustomization(CurrentBackground)
     End Sub
 
-    Private Sub ApplyMapCustomization()
+    Private Sub ApplyMapCustomization(CurrentBackground)
         ' Change background image
         Select Case CurrentBackground
             Case "RIVER"
@@ -183,7 +183,7 @@ Public Class JeuSudoku
         Return True
     End Function
 
-    'Applique la difficulté choisi par le joueurs dans le formulaire des paramètre
+    'Applique la difficulté choisie par le joueurs dans le formulaire des paramètre
     Public Sub ChangeDifficulte(valeur As Integer)
         Difficulte = valeur
     End Sub
