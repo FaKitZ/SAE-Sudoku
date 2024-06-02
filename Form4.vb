@@ -117,6 +117,7 @@
         Me.IsDark = Not Me.IsDark
     End Sub
 
+    'méthode qui change le theme si le darkmode est activé
     Private Sub UpdateMenu()
         If isDarkMode Then
             SetDarkParametre()
@@ -130,6 +131,7 @@
         End If
     End Sub
 
+    'Applique le darkMode sur le formulaire Parametre
     Private Sub SetDarkParametre()
         Me.BackColor = darkBackground
         Me.Label1.ForeColor = highlight4
@@ -147,6 +149,7 @@
         Me.RadioButton4.ForeColor = highlight4
         Me.RadioButton5.ForeColor = highlight4
     End Sub
+    'Applique le darkMode sur le formulaire du menu du jeu
     Private Sub SetDarkMenu()
         MenuSudoku.BackColor = darkBackground
         MenuSudoku.Label1.ForeColor = highlight4
@@ -162,6 +165,7 @@
         MenuSudoku.ButtonParametre.BackColor = darkAccent2
         MenuSudoku.leaveBoutton.BackColor = darkAccent2
     End Sub
+    'Applique le darkMode sur le formulaire des statistique
     Private Sub SetDarkStat()
         StatSudoku.BackColor = darkBackground
         StatSudoku.ButtonStatsAvance.ForeColor = highlight4
@@ -172,6 +176,7 @@
         StatSudoku.nbGameLabel3.ForeColor = highlight4
         StatSudoku.TimeLabel2.ForeColor = highlight4
     End Sub
+    'Methode qui change la couleur du theme sur le formulaire
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
         ' Changez les autres propriétés de contrôle si nécessaire
@@ -190,11 +195,14 @@
         Me.RadioButton4.ForeColor = DefaultForeColor
         Me.RadioButton5.ForeColor = DefaultForeColor
     End Sub
+
+    'Methode qui change le background du formulaire
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         ApplyMapCustomization(CurrentBackground)
     End Sub
 
+    'Methode qui applique le change du backgrounds=
     Private Sub ApplyMapCustomization(CurrentBackground)
         Select Case CurrentBackground
             Case "RIVER"

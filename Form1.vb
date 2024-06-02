@@ -81,6 +81,7 @@
         ParametreSudoku.Show()
     End Sub
 
+    'Méthode qui met le mode classique sur le formulaire
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
         ' Changez les autres propriétés de contrôle si nécessaire
@@ -105,11 +106,12 @@
             End If
         Next
     End Sub
+    'methode public qui permet de changer le theme sur ce formulaire
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         ApplyMapCustomization(CurrentBackground)
     End Sub
-
+    'Methode qui applique le changement de theme
     Private Sub ApplyMapCustomization(CurrentBackground)
         Select Case CurrentBackground
             Case "RIVER"

@@ -215,6 +215,7 @@ Public Class JeuSudoku
         Next
     End Sub
 
+    'Méthode qui crée le puzzle du sudoku soit une grille qui va générer aléatoirement des chiffres et vérifier si l'emplacement est bon
     Private Sub CreatePuzzle(ByRef grid(,) As Integer, nbDeChiffreAffiche As Integer)
         Dim rand As New Random()
         Dim positions As List(Of Tuple(Of Integer, Integer)) = New List(Of Tuple(Of Integer, Integer))()
@@ -245,6 +246,7 @@ Public Class JeuSudoku
         Return True
     End Function
 
+
     Private Sub CheckIfGrilleComplete()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -262,11 +264,13 @@ Public Class JeuSudoku
         Me.Close()
     End Sub
 
+    'Met a jours les stats d'un joueur s'il gagne
     Private Sub FinDePartieSiLoose()
         Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
         Dim tempsEcoule As TimeSpan = initialTime - remainingTime
         ModuleJoueur.MettreAJourJoueurSiLoose(nomJoueur, tempsEcoule)
     End Sub
+    'Met a jours les stats d'un joueur s'il perds (ne prends pas en compte le temps jouer sur cette partie pour le best timer par exemple)
     Private Sub FinDePartieSiWin()
         Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
         Dim tempsEcoule As TimeSpan = initialTime - remainingTime
@@ -296,6 +300,7 @@ Public Class JeuSudoku
         PlayButton.Visible = False
         PauseButton.Visible = True
     End Sub
+
     'Change les couleurs en fonctions du thème choisis par le joueur
     Public Sub ApplyLightTheme()
         Me.BackColor = SystemColors.ActiveCaption
@@ -313,13 +318,13 @@ Public Class JeuSudoku
             End If
         Next
     End Sub
-
+    'Bouton qui active la musique
     Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
         ButtonMusic.Visible = False
         ButtonMusicOFF.Visible = True
         player.Play()
     End Sub
-
+    'Bouton qui desactive la musique
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonMusicOFF.Click
         ButtonMusicOFF.Visible = False
         ButtonMusic.Visible = True
