@@ -68,6 +68,9 @@ Public Class JeuSudoku
                 Dim color4 As Color = Color.FromArgb(139, 69, 19)     ' Marron (tronc d'arbres et cabane)
                 ApplyGridColors(color1, color2, color3, color4)
                 Me.BackgroundImage = My.Resources.Neige
+            Case "DEFAUT"
+                Me.BackgroundImage = Nothing
+                Me.BackColor = SystemColors.ActiveCaption
 
         End Select
     End Sub
@@ -275,7 +278,7 @@ Public Class JeuSudoku
         If arret = vbYes Then
             player.Stop()
             FinDePartieSiLoose()
-            Me.Close()
+            Me.Hide()
             MenuSudoku.Show()
         End If
     End Sub

@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
-        Me.Close()
+        Me.Hide()
         MenuSudoku.Show()
     End Sub
 
@@ -64,6 +64,9 @@
                 Me.BackgroundImage = My.Resources.River
             Case "SNOW"
                 Me.BackgroundImage = My.Resources.Neige
+            Case "DEFAUT"
+                Me.BackgroundImage = Nothing
+                Me.BackColor = SystemColors.ActiveCaption
         End Select
     End Sub
 End Class

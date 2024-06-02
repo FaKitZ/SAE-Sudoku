@@ -116,6 +116,9 @@
                 Me.BackgroundImage = My.Resources.River
             Case "SNOW"
                 Me.BackgroundImage = My.Resources.Neige
+            Case "DEFAUT"
+                Me.BackgroundImage = Nothing
+                Me.BackColor = SystemColors.ActiveCaption
         End Select
     End Sub
 

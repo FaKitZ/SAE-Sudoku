@@ -19,18 +19,12 @@
     Private highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
-        Me.Close()
+        Me.Hide()
         MenuSudoku.Show()
     End Sub
 
     Private Sub ParametreSudoku_Load(sender As Object, e As EventArgs) Handles Me.Load
-        isDarkMode = Me.IsDark
-        If isDarkMode Then
-            ButtonDarkMode.BackgroundImage = My.Resources.Lightmod
-            SetDarkParametre()
-        Else
-            ApplyLightTheme()
-        End If
+
     End Sub
 
     'méthode qui met à jours le timer en fonction du choix du joueur
@@ -89,6 +83,14 @@
             ApplyMapChanges(SelectedMap)
         End If
     End Sub
+
+    Private Sub RadioButtonMapDefaut_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonMapDefaut.CheckedChanged
+        If RadioButtonMapDefaut.Checked Then
+            SelectedMap = "DEFAUT"
+            ApplyMapChanges(SelectedMap)
+        End If
+    End Sub
+
     'RadioButton qui applique la thème choisi par le joueur
     Private Sub ApplyMapChanges(SelectedMap)
         JeuSudoku.ChangeMap(SelectedMap)
@@ -99,7 +101,12 @@
 
     'Button DarkMode
     Private Sub ButtonDarkMode_Click(sender As Object, e As EventArgs) Handles ButtonDarkMode.Click
-        isDarkMode = Not isDarkMode
+        If isDarkMode = True Then
+            isDarkMode = False
+        Else
+            isDarkMode = True
+        End If
+
         JeuSudoku.IsDark = isDarkMode
         If isDarkMode Then
             ButtonDarkMode.BackgroundImage = My.Resources.Lightmod
@@ -108,7 +115,6 @@
         End If
         UpdateMenu()
         Me.IsDark = Not Me.IsDark
-
     End Sub
 
     Private Sub UpdateMenu()
@@ -195,6 +201,9 @@
                 Me.BackgroundImage = My.Resources.River
             Case "SNOW"
                 Me.BackgroundImage = My.Resources.Neige
+            Case "DEFAUT"
+                Me.BackgroundImage = Nothing
+                Me.BackColor = SystemColors.ActiveCaption
         End Select
     End Sub
 
