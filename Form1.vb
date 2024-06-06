@@ -45,8 +45,11 @@
                     UpdateModuleJoueur(Pseudo)  'Actualise les stats du joueurs s'il existe déjà
                 End If
             End If
+
+            JeuSudoku.StartTimerGame()
             JeuSudoku.Show()
             Me.Hide()
+            JeuSudoku.ApplyDarkMod()
         End If
     End Sub
 

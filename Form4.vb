@@ -107,7 +107,7 @@
             isDarkMode = True
         End If
 
-        JeuSudoku.IsDark = isDarkMode
+        JeuSudoku.ChangeDarkMod(isDarkMode)
         If isDarkMode Then
             ButtonDarkMode.BackgroundImage = My.Resources.Lightmod
         Else
@@ -165,6 +165,26 @@
         MenuSudoku.ButtonParametre.BackColor = darkAccent2
         MenuSudoku.leaveBoutton.BackColor = darkAccent2
     End Sub
+
+    Public Sub SetDarkjeu()
+        For Each ctrl As Control In JeuSudoku.TableLayoutPanel1.Controls
+            If TypeOf ctrl Is TextBox Then
+                Dim txtBox As TextBox = ctrl
+                If txtBox.ReadOnly Then
+                    txtBox.BackColor = darkAccent1
+                    txtBox.ForeColor = highlight1
+                Else
+                    txtBox.BackColor = darkAccent2
+                    txtBox.ForeColor = highlight4
+                End If
+            End If
+        Next
+        JeuSudoku.LabelPseudo.ForeColor = highlight4
+        JeuSudoku.pseudoLabel.ForeColor = highlight4
+        JeuSudoku.LabelTimer.ForeColor = highlight4
+        JeuSudoku.BackColor = darkBackground
+    End Sub
+
     'Applique le darkMode sur le formulaire des statistique
     Private Sub SetDarkStat()
         StatSudoku.BackColor = darkBackground

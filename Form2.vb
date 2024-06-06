@@ -7,7 +7,7 @@ Public Class JeuSudoku
     Private Difficulte As Integer = 81 - 55 'Difficulté par defaut réglé à 26 case vide
     Private CurrentBackground As String
     Private CurrentColorScheme As String
-    Public IsDark As Boolean
+    Private isDarkMode As Boolean = False
 
     'Couleurs'
     Dim darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
@@ -20,7 +20,7 @@ Public Class JeuSudoku
     Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
 
     ' Utiliser SoundPlayer pour lire le fichier WAV
-    Dim player As New SoundPlayer(wavFilePath)
+    Dim music As New SoundPlayer(wavFilePath)
     Private Sub JeuSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -34,12 +34,9 @@ Public Class JeuSudoku
                 TableLayoutPanel1.Controls.Add(textBox, j, i)
             Next
         Next
-        GenerateSudoku()
-        StartTimerGame()
 
-        If IsDark Then
-            ApplyGridColors(darkAccent2, highlight4, darkAccent1, highlight1)
-        End If
+        GenerateSudoku() 'génère le sudoku au démarrage
+
         ApplyMapCustomization(CurrentBackground)
         LabelPseudo.Text = MenuSudoku.nameComboBox1.Text
 
@@ -73,6 +70,16 @@ Public Class JeuSudoku
                 Me.BackColor = SystemColors.ActiveCaption
 
         End Select
+    End Sub
+
+    Public Sub ChangeDarkMod(value As Boolean)
+        isDarkMode = value
+    End Sub
+
+    Public Sub ApplyDarkMod()
+        If isDarkMode = True Then
+            ParametreSudoku.SetDarkjeu()
+        End If
     End Sub
 
     Public Sub ApplyGridColors(gridBackColor As Color, gridForeColor As Color, readOnlyBackColor As Color, readOnlyForeColor As Color)
@@ -112,7 +119,7 @@ Public Class JeuSudoku
     End Sub
 
     'lance le timer de la partie
-    Private Sub StartTimerGame()
+    Public Sub StartTimerGame()
         Timer1.Interval = 1000
         remainingTime = initialTime
         LabelTimer.Text = "Temps restant :"
@@ -133,11 +140,6 @@ Public Class JeuSudoku
             MessageBox.Show("Entrée invalide!")
             txtBox.Clear()
         Else
-            If IsDark Then
-                txtBox.BackColor = darkAccent3
-            Else
-                txtBox.BackColor = DefaultBackColor
-            End If
             CheckIfGrilleComplete()
         End If
 
@@ -266,6 +268,7 @@ Public Class JeuSudoku
 
     'Met a jours les stats d'un joueur s'il gagne
     Private Sub FinDePartieSiLoose()
+
         Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
         Dim tempsEcoule As TimeSpan = initialTime - remainingTime
         ModuleJoueur.MettreAJourJoueurSiLoose(nomJoueur, tempsEcoule)
@@ -280,10 +283,11 @@ Public Class JeuSudoku
     Private Sub leaveButon_Click(sender As Object, e As EventArgs) Handles leaveButon.Click
         Dim arret As Integer = MsgBox("Voulez-vous arrêter la partie ?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Arrêt")
         If arret = vbYes Then
-            player.Stop()
+            music.Stop()
             FinDePartieSiLoose()
-            Me.Hide()
+            Timer1.Stop()
             MenuSudoku.Show()
+            Me.Hide()
         End If
     End Sub
 
@@ -322,12 +326,12 @@ Public Class JeuSudoku
     Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
         ButtonMusic.Visible = False
         ButtonMusicOFF.Visible = True
-        player.Play()
+        music.Play()
     End Sub
     'Bouton qui desactive la musique
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonMusicOFF.Click
         ButtonMusicOFF.Visible = False
         ButtonMusic.Visible = True
-        player.Stop()
+        music.Stop()
     End Sub
 End Class
