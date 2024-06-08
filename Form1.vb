@@ -45,7 +45,7 @@
                     UpdateModuleJoueur(Pseudo)  'Actualise les stats du joueurs s'il existe déjà
                 End If
             End If
-
+            JeuSudoku.LabelPseudo.Text = Me.nameComboBox1.Text
             JeuSudoku.StartTimerGame()
             JeuSudoku.Show()
             Me.Hide()

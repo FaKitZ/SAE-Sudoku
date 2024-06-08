@@ -38,7 +38,7 @@ Public Class JeuSudoku
         GenerateSudoku() 'génère le sudoku au démarrage
 
         ApplyMapCustomization(CurrentBackground)
-        LabelPseudo.Text = MenuSudoku.nameComboBox1.Text
+
 
     End Sub
 
@@ -140,6 +140,7 @@ Public Class JeuSudoku
             MessageBox.Show("Entrée invalide!")
             txtBox.Clear()
         Else
+            txtBox.BackColor = Color.White
             CheckIfGrilleComplete()
         End If
 
