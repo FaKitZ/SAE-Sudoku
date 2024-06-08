@@ -267,28 +267,40 @@ Public Class JeuSudoku
         ButtonMusic.Visible = True
         music.Stop()
     End Sub
-
+    'on joue avec les .visible pour superposer les boutons
     Private Sub ButtonYoutube_Click(sender As Object, e As EventArgs) Handles ButtonYoutube.Click
         Youtube.Show()
+        ButtonYoutube.Visible = False
+        ButtonFermeYoutube.Visible = True
     End Sub
 
     Private Sub ButtonNetflix_Click(sender As Object, e As EventArgs) Handles ButtonNetflix.Click
         Netflix.Show()
+        ButtonNetflix.Visible = False
+        ButtonFermeNetflix.Visible = True
     End Sub
 
     Private Sub ButtonFermeNetflix_Click(sender As Object, e As EventArgs) Handles ButtonFermeNetflix.Click
         Netflix.Close()
+        ButtonNetflix.Visible = True
+        ButtonFermeNetflix.Visible = False
     End Sub
 
     Private Sub ButtonFermeYoutube_Click(sender As Object, e As EventArgs) Handles ButtonFermeYoutube.Click
         Youtube.Close()
+        ButtonFermeYoutube.Visible = False
+        ButtonYoutube.Visible = True
     End Sub
 
     Private Sub ButtonInternet_Click(sender As Object, e As EventArgs) Handles ButtonInternet.Click
         Internet.Show()
+        ButtonInternet.Visible = False
+        ButtonFermeinternet.Visible = True
     End Sub
 
     Private Sub ButtonFermeinternet_Click(sender As Object, e As EventArgs) Handles ButtonFermeinternet.Click
         Internet.Close()
+        ButtonFermeinternet.Visible = False
+        ButtonInternet.Visible = True
     End Sub
 End Class

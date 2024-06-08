@@ -208,30 +208,33 @@ Partial Class JeuSudoku
         '
         'ButtonFermeinternet
         '
-        Me.ButtonFermeinternet.Location = New System.Drawing.Point(36, 520)
+        Me.ButtonFermeinternet.Location = New System.Drawing.Point(36, 480)
         Me.ButtonFermeinternet.Name = "ButtonFermeinternet"
         Me.ButtonFermeinternet.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeinternet.TabIndex = 17
         Me.ButtonFermeinternet.Text = "Ferme Internet"
         Me.ButtonFermeinternet.UseVisualStyleBackColor = True
+        Me.ButtonFermeinternet.Visible = False
         '
         'ButtonFermeNetflix
         '
-        Me.ButtonFermeNetflix.Location = New System.Drawing.Point(230, 520)
+        Me.ButtonFermeNetflix.Location = New System.Drawing.Point(230, 480)
         Me.ButtonFermeNetflix.Name = "ButtonFermeNetflix"
         Me.ButtonFermeNetflix.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeNetflix.TabIndex = 16
         Me.ButtonFermeNetflix.Text = "Ferme Netflix"
         Me.ButtonFermeNetflix.UseVisualStyleBackColor = True
+        Me.ButtonFermeNetflix.Visible = False
         '
         'ButtonFermeYoutube
         '
-        Me.ButtonFermeYoutube.Location = New System.Drawing.Point(133, 520)
+        Me.ButtonFermeYoutube.Location = New System.Drawing.Point(133, 480)
         Me.ButtonFermeYoutube.Name = "ButtonFermeYoutube"
         Me.ButtonFermeYoutube.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeYoutube.TabIndex = 15
         Me.ButtonFermeYoutube.Text = "FermeYoutube"
         Me.ButtonFermeYoutube.UseVisualStyleBackColor = True
+        Me.ButtonFermeYoutube.Visible = False
         '
         'JeuSudoku
         '
