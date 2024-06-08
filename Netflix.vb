@@ -4,7 +4,7 @@ Public Class Netflix
     Private Async Sub Youtube_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Assurez-vous que le SDK WebView2 est installé et initialisé
         Await WebView21_InitializeAsync()
-        ' Naviguer vers YouTube
+        ' Naviguer vers netflix
         WebView21.Source = New Uri("https://www.netflix.com/fr/")
     End Sub
 
