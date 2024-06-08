@@ -52,7 +52,7 @@ Partial Class JeuSudoku
         '
         Me.LabelTimer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelTimer.AutoSize = True
-        Me.LabelTimer.Location = New System.Drawing.Point(573, 101)
+        Me.LabelTimer.Location = New System.Drawing.Point(547, 136)
         Me.LabelTimer.Name = "LabelTimer"
         Me.LabelTimer.Size = New System.Drawing.Size(67, 13)
         Me.LabelTimer.TabIndex = 1
@@ -62,7 +62,7 @@ Partial Class JeuSudoku
         '
         Me.LabelPseudo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelPseudo.AutoSize = True
-        Me.LabelPseudo.Location = New System.Drawing.Point(573, 64)
+        Me.LabelPseudo.Location = New System.Drawing.Point(547, 99)
         Me.LabelPseudo.Name = "LabelPseudo"
         Me.LabelPseudo.Size = New System.Drawing.Size(69, 13)
         Me.LabelPseudo.TabIndex = 2
@@ -72,7 +72,7 @@ Partial Class JeuSudoku
         '
         Me.LabelPseudoDuJoueur.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelPseudoDuJoueur.AutoSize = True
-        Me.LabelPseudoDuJoueur.Location = New System.Drawing.Point(573, 30)
+        Me.LabelPseudoDuJoueur.Location = New System.Drawing.Point(547, 65)
         Me.LabelPseudoDuJoueur.Name = "LabelPseudoDuJoueur"
         Me.LabelPseudoDuJoueur.Size = New System.Drawing.Size(96, 13)
         Me.LabelPseudoDuJoueur.TabIndex = 3
@@ -83,7 +83,7 @@ Partial Class JeuSudoku
         Me.leaveButon.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.leaveButon.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.leaveButon.ForeColor = System.Drawing.Color.Black
-        Me.leaveButon.Location = New System.Drawing.Point(573, 207)
+        Me.leaveButon.Location = New System.Drawing.Point(547, 242)
         Me.leaveButon.Name = "leaveButon"
         Me.leaveButon.Size = New System.Drawing.Size(91, 29)
         Me.leaveButon.TabIndex = 4
@@ -94,7 +94,7 @@ Partial Class JeuSudoku
         '
         Me.PauseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PauseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PauseButton.Location = New System.Drawing.Point(573, 152)
+        Me.PauseButton.Location = New System.Drawing.Point(547, 187)
         Me.PauseButton.Name = "PauseButton"
         Me.PauseButton.Size = New System.Drawing.Size(91, 22)
         Me.PauseButton.TabIndex = 5
@@ -105,7 +105,7 @@ Partial Class JeuSudoku
         '
         Me.PlayButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PlayButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PlayButton.Location = New System.Drawing.Point(573, 152)
+        Me.PlayButton.Location = New System.Drawing.Point(547, 187)
         Me.PlayButton.Name = "PlayButton"
         Me.PlayButton.Size = New System.Drawing.Size(91, 22)
         Me.PlayButton.TabIndex = 6
@@ -118,7 +118,7 @@ Partial Class JeuSudoku
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(576, 540)
+        Me.PictureBox1.Location = New System.Drawing.Point(470, 365)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(199, 204)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -161,7 +161,7 @@ Partial Class JeuSudoku
         'ButtonMusic
         '
         Me.ButtonMusic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonMusic.Location = New System.Drawing.Point(573, 180)
+        Me.ButtonMusic.Location = New System.Drawing.Point(547, 215)
         Me.ButtonMusic.Name = "ButtonMusic"
         Me.ButtonMusic.Size = New System.Drawing.Size(91, 23)
         Me.ButtonMusic.TabIndex = 11
@@ -171,7 +171,7 @@ Partial Class JeuSudoku
         'ButtonMusicOFF
         '
         Me.ButtonMusicOFF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonMusicOFF.Location = New System.Drawing.Point(573, 180)
+        Me.ButtonMusicOFF.Location = New System.Drawing.Point(547, 215)
         Me.ButtonMusicOFF.Name = "ButtonMusicOFF"
         Me.ButtonMusicOFF.Size = New System.Drawing.Size(91, 23)
         Me.ButtonMusicOFF.TabIndex = 0
@@ -181,7 +181,7 @@ Partial Class JeuSudoku
         '
         'ButtonYoutube
         '
-        Me.ButtonYoutube.Location = New System.Drawing.Point(133, 480)
+        Me.ButtonYoutube.Location = New System.Drawing.Point(133, 505)
         Me.ButtonYoutube.Name = "ButtonYoutube"
         Me.ButtonYoutube.Size = New System.Drawing.Size(91, 25)
         Me.ButtonYoutube.TabIndex = 12
@@ -190,7 +190,7 @@ Partial Class JeuSudoku
         '
         'ButtonNetflix
         '
-        Me.ButtonNetflix.Location = New System.Drawing.Point(230, 480)
+        Me.ButtonNetflix.Location = New System.Drawing.Point(230, 505)
         Me.ButtonNetflix.Name = "ButtonNetflix"
         Me.ButtonNetflix.Size = New System.Drawing.Size(91, 25)
         Me.ButtonNetflix.TabIndex = 13
@@ -199,7 +199,7 @@ Partial Class JeuSudoku
         '
         'ButtonInternet
         '
-        Me.ButtonInternet.Location = New System.Drawing.Point(36, 480)
+        Me.ButtonInternet.Location = New System.Drawing.Point(36, 505)
         Me.ButtonInternet.Name = "ButtonInternet"
         Me.ButtonInternet.Size = New System.Drawing.Size(91, 25)
         Me.ButtonInternet.TabIndex = 14
@@ -208,7 +208,7 @@ Partial Class JeuSudoku
         '
         'ButtonFermeinternet
         '
-        Me.ButtonFermeinternet.Location = New System.Drawing.Point(36, 480)
+        Me.ButtonFermeinternet.Location = New System.Drawing.Point(36, 505)
         Me.ButtonFermeinternet.Name = "ButtonFermeinternet"
         Me.ButtonFermeinternet.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeinternet.TabIndex = 17
@@ -218,7 +218,7 @@ Partial Class JeuSudoku
         '
         'ButtonFermeNetflix
         '
-        Me.ButtonFermeNetflix.Location = New System.Drawing.Point(230, 480)
+        Me.ButtonFermeNetflix.Location = New System.Drawing.Point(230, 505)
         Me.ButtonFermeNetflix.Name = "ButtonFermeNetflix"
         Me.ButtonFermeNetflix.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeNetflix.TabIndex = 16
@@ -228,7 +228,7 @@ Partial Class JeuSudoku
         '
         'ButtonFermeYoutube
         '
-        Me.ButtonFermeYoutube.Location = New System.Drawing.Point(133, 480)
+        Me.ButtonFermeYoutube.Location = New System.Drawing.Point(133, 505)
         Me.ButtonFermeYoutube.Name = "ButtonFermeYoutube"
         Me.ButtonFermeYoutube.Size = New System.Drawing.Size(91, 25)
         Me.ButtonFermeYoutube.TabIndex = 15
@@ -242,7 +242,7 @@ Partial Class JeuSudoku
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(785, 773)
+        Me.ClientSize = New System.Drawing.Size(681, 581)
         Me.Controls.Add(Me.ButtonFermeinternet)
         Me.Controls.Add(Me.ButtonFermeNetflix)
         Me.Controls.Add(Me.ButtonFermeYoutube)
@@ -260,7 +260,7 @@ Partial Class JeuSudoku
         Me.Controls.Add(Me.LabelTimer)
         Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
-        Me.MinimumSize = New System.Drawing.Size(801, 812)
+        Me.MinimumSize = New System.Drawing.Size(697, 620)
         Me.Name = "JeuSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SUDOKU"
