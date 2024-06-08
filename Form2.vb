@@ -29,7 +29,6 @@ Public Class JeuSudoku
         Next
 
         GenerateSudoku() 'génère le sudoku au démarrage
-
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
     End Sub
 
@@ -267,5 +266,29 @@ Public Class JeuSudoku
         ButtonMusicOFF.Visible = False
         ButtonMusic.Visible = True
         music.Stop()
+    End Sub
+
+    Private Sub ButtonYoutube_Click(sender As Object, e As EventArgs) Handles ButtonYoutube.Click
+        Youtube.Show()
+    End Sub
+
+    Private Sub ButtonNetflix_Click(sender As Object, e As EventArgs) Handles ButtonNetflix.Click
+        Netflix.Show()
+    End Sub
+
+    Private Sub ButtonFermeNetflix_Click(sender As Object, e As EventArgs) Handles ButtonFermeNetflix.Click
+        Netflix.Close()
+    End Sub
+
+    Private Sub ButtonFermeYoutube_Click(sender As Object, e As EventArgs) Handles ButtonFermeYoutube.Click
+        Youtube.Close()
+    End Sub
+
+    Private Sub ButtonInternet_Click(sender As Object, e As EventArgs) Handles ButtonInternet.Click
+        Internet.Show()
+    End Sub
+
+    Private Sub ButtonFermeinternet_Click(sender As Object, e As EventArgs) Handles ButtonFermeinternet.Click
+        Internet.Close()
     End Sub
 End Class
