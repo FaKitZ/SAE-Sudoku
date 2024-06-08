@@ -200,7 +200,6 @@ Public Class JeuSudoku
         Return True
     End Function
 
-
     Private Sub CheckIfGrilleComplete()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -256,7 +255,6 @@ Public Class JeuSudoku
         PlayButton.Visible = False
         PauseButton.Visible = True
     End Sub
-
 
     'Bouton qui active la musique
     Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
