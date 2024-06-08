@@ -7,8 +7,11 @@
     Private isDarkMode As Boolean = False
     Private CurrentBackground As String
 
-    'couleurs'
-    Public IsDark As Boolean
+    'couleurs
+    Public color1 As Color = Color.FromArgb(255, 165, 0)   ' Orange (feuilles d'automne)
+    Public color2 As Color = Color.FromArgb(255, 223, 0)   ' Jaune (feuilles d'automne)
+    Public color3 As Color = Color.FromArgb(205, 92, 92)   ' Rouge adouci (feuilles d'automne)
+    Public color4 As Color = Color.FromArgb(0, 191, 255)
     Private darkBackground As Color = Color.FromArgb(18, 18, 18)  ' Fond sombre
     Private darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
     Private darkAccent2 As Color = Color.FromArgb(72, 72, 72)     ' Accent sombre 2
@@ -19,6 +22,8 @@
     Private highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
+        If isDarkMode = False Then
+        End If
         Me.Hide()
         MenuSudoku.Show()
     End Sub
@@ -114,7 +119,6 @@
             ButtonDarkMode.BackgroundImage = My.Resources.Darkmod
         End If
         UpdateMenu()
-        Me.IsDark = Not Me.IsDark
     End Sub
 
     'méthode qui change le theme si le darkmode est activé
@@ -148,6 +152,9 @@
         Me.RadioButtonDifficile.ForeColor = highlight4
         Me.RadioButton4.ForeColor = highlight4
         Me.RadioButton5.ForeColor = highlight4
+        Me.RadioButtonHard.ForeColor = highlight4
+        Me.RadioButtonMapDefaut.ForeColor = highlight4
+
     End Sub
     'Applique le darkMode sur le formulaire du menu du jeu
     Private Sub SetDarkMenu()
@@ -214,6 +221,11 @@
         Me.RadioButtonDifficile.ForeColor = DefaultForeColor
         Me.RadioButton4.ForeColor = DefaultForeColor
         Me.RadioButton5.ForeColor = DefaultForeColor
+        Me.RadioButtonHard.ForeColor = DefaultForeColor
+        Me.RadioButtonMapDefaut.ForeColor = DefaultForeColor
+        Me.GroupBoxDifficulte.ForeColor = DefaultForeColor
+        Me.GroupBoxMap.ForeColor = DefaultForeColor
+
     End Sub
 
     'Methode qui change le background du formulaire

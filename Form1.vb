@@ -1,9 +1,5 @@
 ﻿Public Class MenuSudoku
     Dim i As Integer
-    Dim color1 As Color = Color.FromArgb(255, 165, 0)   ' Orange (feuilles d'automne)
-    Dim color2 As Color = Color.FromArgb(255, 223, 0)   ' Jaune (feuilles d'automne)
-    Dim color3 As Color = Color.FromArgb(205, 92, 92)   ' Rouge adouci (feuilles d'automne)
-    Dim color4 As Color = Color.FromArgb(0, 191, 255)
     Private itemsListComboBoxF1 As New List(Of String)  'Liste de joueurs pour la comboBox du menu
     Private CurrentBackground As String
 
@@ -91,23 +87,36 @@
         For Each ctrl As Control In Me.Controls
             If TypeOf ctrl Is Label Then
                 ctrl.ForeColor = DefaultForeColor
+            ElseIf TypeOf ctrl Is Button Then
+                ctrl.BackColor = DefaultBackColor
+                ctrl.ForeColor = DefaultForeColor
             End If
         Next
         For Each ctrl As Control In Me.GroupBox1.Controls
-            If CurrentBackground = "River" Then
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = DefaultForeColor
+            ElseIf TypeOf ctrl Is Button Then
+                ctrl.BackColor = DefaultBackColor
+                ctrl.ForeColor = DefaultForeColor
+            End If
+        Next
+        For Each ctrl As Control In Me.GroupBox1.Controls
+            If CurrentBackground = "RIVER" Then
                 If TypeOf ctrl Is Button Then
-                    ctrl.BackColor = color2
-                    ctrl.ForeColor = color1
+                    ctrl.BackColor = ParametreSudoku.color2
+                    ctrl.ForeColor = ParametreSudoku.color1
                 ElseIf TypeOf ctrl Is Label Then
-                    ctrl.ForeColor = color1
+                    ctrl.ForeColor = ParametreSudoku.color1
                 ElseIf TypeOf ctrl Is ComboBox Then
-                    ctrl.BackColor = color4
-                    ctrl.ForeColor = color1
+                    ctrl.BackColor = ParametreSudoku.color4
+                    ctrl.ForeColor = ParametreSudoku.color1
                 End If
 
             Else
             End If
         Next
+        Me.nameComboBox1.BackColor = DefaultBackColor
+        Me.nameComboBox1.ForeColor = DefaultForeColor
     End Sub
     'methode public qui permet de changer le theme sur ce formulaire
     Public Sub ChangeMap(background As String)

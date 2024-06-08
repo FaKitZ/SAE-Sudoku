@@ -54,6 +54,9 @@
         For Each ctrl As Control In Me.Controls
             If TypeOf ctrl Is Label Then
                 ctrl.ForeColor = DefaultForeColor
+            ElseIf TypeOf ctrl Is Button Then
+                ctrl.BackColor = DefaultBackColor
+                ctrl.ForeColor = DefaultForeColor
             End If
         Next
     End Sub
