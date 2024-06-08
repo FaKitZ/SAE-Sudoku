@@ -24,19 +24,19 @@ Partial Class ParametreSudoku
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ParametreSudoku))
         Me.LeaveButton = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LabelChangeTimer = New System.Windows.Forms.Label()
         Me.RadioButtonFacile = New System.Windows.Forms.RadioButton()
         Me.RadioButtonMoyen = New System.Windows.Forms.RadioButton()
         Me.RadioButtonDifficile = New System.Windows.Forms.RadioButton()
         Me.ChangeTimerButton = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LabelTitre = New System.Windows.Forms.Label()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.ButtonDarkMode = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelChoixDossier = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ButtonCheminDossier = New System.Windows.Forms.Button()
+        Me.ButtonCheminChargerSave = New System.Windows.Forms.Button()
         Me.RadioButtonHard = New System.Windows.Forms.RadioButton()
         Me.GroupBoxDifficulte = New System.Windows.Forms.GroupBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
@@ -50,28 +50,28 @@ Partial Class ParametreSudoku
         '
         Me.LeaveButton.BackColor = System.Drawing.Color.LightSteelBlue
         Me.LeaveButton.Location = New System.Drawing.Point(374, 180)
-        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LeaveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LeaveButton.Name = "LeaveButton"
         Me.LeaveButton.Size = New System.Drawing.Size(136, 20)
         Me.LeaveButton.TabIndex = 8
         Me.LeaveButton.Text = "Back to menu"
         Me.LeaveButton.UseVisualStyleBackColor = False
         '
-        'Label1
+        'LabelChangeTimer
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 66)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Temps (defaut 7min) : "
+        Me.LabelChangeTimer.AutoSize = True
+        Me.LabelChangeTimer.Location = New System.Drawing.Point(31, 66)
+        Me.LabelChangeTimer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LabelChangeTimer.Name = "LabelChangeTimer"
+        Me.LabelChangeTimer.Size = New System.Drawing.Size(112, 13)
+        Me.LabelChangeTimer.TabIndex = 9
+        Me.LabelChangeTimer.Text = "Temps (defaut 7min) : "
         '
         'RadioButtonFacile
         '
         Me.RadioButtonFacile.AutoSize = True
         Me.RadioButtonFacile.Location = New System.Drawing.Point(14, 25)
-        Me.RadioButtonFacile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButtonFacile.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButtonFacile.Name = "RadioButtonFacile"
         Me.RadioButtonFacile.Size = New System.Drawing.Size(53, 17)
         Me.RadioButtonFacile.TabIndex = 12
@@ -83,7 +83,7 @@ Partial Class ParametreSudoku
         '
         Me.RadioButtonMoyen.AutoSize = True
         Me.RadioButtonMoyen.Location = New System.Drawing.Point(68, 25)
-        Me.RadioButtonMoyen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButtonMoyen.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButtonMoyen.Name = "RadioButtonMoyen"
         Me.RadioButtonMoyen.Size = New System.Drawing.Size(56, 17)
         Me.RadioButtonMoyen.TabIndex = 13
@@ -95,7 +95,7 @@ Partial Class ParametreSudoku
         '
         Me.RadioButtonDifficile.AutoSize = True
         Me.RadioButtonDifficile.Location = New System.Drawing.Point(124, 25)
-        Me.RadioButtonDifficile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButtonDifficile.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButtonDifficile.Name = "RadioButtonDifficile"
         Me.RadioButtonDifficile.Size = New System.Drawing.Size(59, 17)
         Me.RadioButtonDifficile.TabIndex = 14
@@ -107,32 +107,32 @@ Partial Class ParametreSudoku
         '
         Me.ChangeTimerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ChangeTimerButton.Location = New System.Drawing.Point(148, 59)
-        Me.ChangeTimerButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChangeTimerButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeTimerButton.Name = "ChangeTimerButton"
         Me.ChangeTimerButton.Size = New System.Drawing.Size(56, 27)
         Me.ChangeTimerButton.TabIndex = 15
         Me.ChangeTimerButton.Text = "Changer"
         Me.ChangeTimerButton.UseVisualStyleBackColor = True
         '
-        'Label5
+        'LabelTitre
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 18.0!)
-        Me.Label5.Location = New System.Drawing.Point(200, 9)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 34)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Paramètres"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LabelTitre.AutoSize = True
+        Me.LabelTitre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelTitre.Font = New System.Drawing.Font("Segoe UI", 18.0!)
+        Me.LabelTitre.Location = New System.Drawing.Point(200, 9)
+        Me.LabelTitre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LabelTitre.Name = "LabelTitre"
+        Me.LabelTitre.Size = New System.Drawing.Size(133, 34)
+        Me.LabelTitre.TabIndex = 17
+        Me.LabelTitre.Text = "Paramètres"
+        Me.LabelTitre.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.BackColor = System.Drawing.Color.Transparent
         Me.RadioButton4.Location = New System.Drawing.Point(18, 18)
-        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(58, 17)
         Me.RadioButton4.TabIndex = 19
@@ -144,7 +144,7 @@ Partial Class ParametreSudoku
         '
         Me.RadioButton5.AutoSize = True
         Me.RadioButton5.Location = New System.Drawing.Point(74, 18)
-        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(59, 17)
         Me.RadioButton5.TabIndex = 20
@@ -160,44 +160,44 @@ Partial Class ParametreSudoku
         Me.ButtonDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonDarkMode.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.ButtonDarkMode.Location = New System.Drawing.Point(247, 158)
-        Me.ButtonDarkMode.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ButtonDarkMode.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDarkMode.Name = "ButtonDarkMode"
         Me.ButtonDarkMode.Size = New System.Drawing.Size(52, 42)
         Me.ButtonDarkMode.TabIndex = 21
         Me.ButtonDarkMode.UseVisualStyleBackColor = False
         '
-        'Label2
+        'LabelChoixDossier
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(375, 66)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 13)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Choix du dossier info stats :"
+        Me.LabelChoixDossier.AutoSize = True
+        Me.LabelChoixDossier.Location = New System.Drawing.Point(375, 66)
+        Me.LabelChoixDossier.Name = "LabelChoixDossier"
+        Me.LabelChoixDossier.Size = New System.Drawing.Size(135, 13)
+        Me.LabelChoixDossier.TabIndex = 22
+        Me.LabelChoixDossier.Text = "Choix du dossier info stats :"
         '
-        'Button2
+        'ButtonCheminDossier
         '
-        Me.Button2.Location = New System.Drawing.Point(374, 94)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(136, 25)
-        Me.Button2.TabIndex = 23
-        Me.Button2.Text = "Chemin du dossier"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonCheminDossier.Location = New System.Drawing.Point(374, 94)
+        Me.ButtonCheminDossier.Name = "ButtonCheminDossier"
+        Me.ButtonCheminDossier.Size = New System.Drawing.Size(136, 25)
+        Me.ButtonCheminDossier.TabIndex = 23
+        Me.ButtonCheminDossier.Text = "Chemin du dossier"
+        Me.ButtonCheminDossier.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ButtonCheminChargerSave
         '
-        Me.Button3.Location = New System.Drawing.Point(374, 132)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(136, 24)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Charger une save"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ButtonCheminChargerSave.Location = New System.Drawing.Point(374, 132)
+        Me.ButtonCheminChargerSave.Name = "ButtonCheminChargerSave"
+        Me.ButtonCheminChargerSave.Size = New System.Drawing.Size(136, 24)
+        Me.ButtonCheminChargerSave.TabIndex = 24
+        Me.ButtonCheminChargerSave.Text = "Charger une save"
+        Me.ButtonCheminChargerSave.UseVisualStyleBackColor = True
         '
         'RadioButtonHard
         '
         Me.RadioButtonHard.AutoSize = True
         Me.RadioButtonHard.Location = New System.Drawing.Point(187, 25)
-        Me.RadioButtonHard.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButtonHard.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButtonHard.Name = "RadioButtonHard"
         Me.RadioButtonHard.Size = New System.Drawing.Size(95, 17)
         Me.RadioButtonHard.TabIndex = 25
@@ -251,15 +251,15 @@ Partial Class ParametreSudoku
         Me.ClientSize = New System.Drawing.Size(546, 236)
         Me.Controls.Add(Me.GroupBoxMap)
         Me.Controls.Add(Me.GroupBoxDifficulte)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.ButtonCheminChargerSave)
+        Me.Controls.Add(Me.ButtonCheminDossier)
+        Me.Controls.Add(Me.LabelChoixDossier)
+        Me.Controls.Add(Me.LabelTitre)
         Me.Controls.Add(Me.ChangeTimerButton)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LabelChangeTimer)
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.ButtonDarkMode)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(561, 274)
         Me.Name = "ParametreSudoku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -273,19 +273,19 @@ Partial Class ParametreSudoku
 
     End Sub
     Friend WithEvents LeaveButton As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelChangeTimer As Label
     Friend WithEvents RadioButtonFacile As RadioButton
     Friend WithEvents RadioButtonMoyen As RadioButton
     Friend WithEvents RadioButtonDifficile As RadioButton
     Friend WithEvents ChangeTimerButton As Button
-    Friend WithEvents Label5 As Label
+    Friend WithEvents LabelTitre As Label
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents ButtonDarkMode As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LabelChoixDossier As Label
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents ButtonCheminDossier As Button
+    Friend WithEvents ButtonCheminChargerSave As Button
     Friend WithEvents RadioButtonHard As RadioButton
     Friend WithEvents GroupBoxDifficulte As GroupBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker

@@ -19,7 +19,6 @@
     'Synchronise les listeBoxIndex par rapport aux bon joueur sélectionné
     Private Sub ComboBoxName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxName.SelectedIndexChanged
         SyncSelections(ComboBoxName.SelectedIndex)
-
     End Sub
 
     'Methode qui synchronise les indexe de listBox
@@ -45,37 +44,5 @@
     'Methode qui fait apparaitre une message box avec les infos du joueurs sélectionné
     Private Sub ButtonStatsAvance_Click(sender As Object, e As EventArgs) Handles ButtonStatsAvance.Click
         MsgBox("Pseudo du joueur : " & ListBoxName.Text & vbCrLf & "Meilleur temps : " & ListBoxBestTimer.Text & vbCrLf & "Total Partie : " & ListBoxTotalPartie.Text & vbCrLf & "Heure de jeu :" & ListBoxHeureDeJeu.Text & MsgBoxStyle.Information)
-    End Sub
-
-    'change le thème du formulaire
-    Public Sub ApplyLightTheme()
-        Me.BackColor = SystemColors.ActiveCaption
-        ' Changez les autres propriétés de contrôle si nécessaire
-        For Each ctrl As Control In Me.Controls
-            If TypeOf ctrl Is Label Then
-                ctrl.ForeColor = DefaultForeColor
-            ElseIf TypeOf ctrl Is Button Then
-                ctrl.BackColor = DefaultBackColor
-                ctrl.ForeColor = DefaultForeColor
-            End If
-        Next
-    End Sub
-
-    'change le Background du formulaire
-    Public Sub ChangeMap(background As String)
-        CurrentBackground = background
-        ApplyMapCustomization(CurrentBackground)
-    End Sub
-    'Apllique les changement du background
-    Private Sub ApplyMapCustomization(CurrentBackground)
-        Select Case CurrentBackground
-            Case "RIVER"
-                Me.BackgroundImage = My.Resources.River
-            Case "SNOW"
-                Me.BackgroundImage = My.Resources.Neige
-            Case "DEFAUT"
-                Me.BackgroundImage = Nothing
-                Me.BackColor = SystemColors.ActiveCaption
-        End Select
     End Sub
 End Class

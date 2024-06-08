@@ -27,12 +27,12 @@ Partial Class JeuSudoku
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LabelTimer = New System.Windows.Forms.Label()
         Me.LabelPseudo = New System.Windows.Forms.Label()
-        Me.pseudoLabel = New System.Windows.Forms.Label()
+        Me.LabelPseudoDuJoueur = New System.Windows.Forms.Label()
         Me.leaveButon = New System.Windows.Forms.Button()
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.PlayButton = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanelGrilleSudoku = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonMusic = New System.Windows.Forms.Button()
         Me.ButtonMusicOFF = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,15 +62,15 @@ Partial Class JeuSudoku
         Me.LabelPseudo.TabIndex = 2
         Me.LabelPseudo.Text = "LabelPseudo"
         '
-        'pseudoLabel
+        'LabelPseudoDuJoueur
         '
-        Me.pseudoLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pseudoLabel.AutoSize = True
-        Me.pseudoLabel.Location = New System.Drawing.Point(511, 30)
-        Me.pseudoLabel.Name = "pseudoLabel"
-        Me.pseudoLabel.Size = New System.Drawing.Size(96, 13)
-        Me.pseudoLabel.TabIndex = 3
-        Me.pseudoLabel.Text = "Pseudo du joueur :"
+        Me.LabelPseudoDuJoueur.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelPseudoDuJoueur.AutoSize = True
+        Me.LabelPseudoDuJoueur.Location = New System.Drawing.Point(511, 30)
+        Me.LabelPseudoDuJoueur.Name = "LabelPseudoDuJoueur"
+        Me.LabelPseudoDuJoueur.Size = New System.Drawing.Size(96, 13)
+        Me.LabelPseudoDuJoueur.TabIndex = 3
+        Me.LabelPseudoDuJoueur.Text = "Pseudo du joueur :"
         '
         'leaveButon
         '
@@ -119,39 +119,39 @@ Partial Class JeuSudoku
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
-        'TableLayoutPanel1
+        'TableLayoutPanelGrilleSudoku
         '
-        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.TableLayoutPanel1.ColumnCount = 9
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(14, 21)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TableLayoutPanel1.MaximumSize = New System.Drawing.Size(470, 448)
-        Me.TableLayoutPanel1.MinimumSize = New System.Drawing.Size(470, 441)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 9
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(470, 441)
-        Me.TableLayoutPanel1.TabIndex = 10
+        Me.TableLayoutPanelGrilleSudoku.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanelGrilleSudoku.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TableLayoutPanelGrilleSudoku.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanelGrilleSudoku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TableLayoutPanelGrilleSudoku.ColumnCount = 9
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.Location = New System.Drawing.Point(14, 21)
+        Me.TableLayoutPanelGrilleSudoku.Margin = New System.Windows.Forms.Padding(2)
+        Me.TableLayoutPanelGrilleSudoku.MaximumSize = New System.Drawing.Size(470, 448)
+        Me.TableLayoutPanelGrilleSudoku.MinimumSize = New System.Drawing.Size(470, 441)
+        Me.TableLayoutPanelGrilleSudoku.Name = "TableLayoutPanelGrilleSudoku"
+        Me.TableLayoutPanelGrilleSudoku.RowCount = 9
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanelGrilleSudoku.Size = New System.Drawing.Size(470, 441)
+        Me.TableLayoutPanelGrilleSudoku.TabIndex = 10
         '
         'ButtonMusic
         '
@@ -183,11 +183,11 @@ Partial Class JeuSudoku
         Me.ClientSize = New System.Drawing.Size(662, 610)
         Me.Controls.Add(Me.ButtonMusicOFF)
         Me.Controls.Add(Me.ButtonMusic)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.TableLayoutPanelGrilleSudoku)
         Me.Controls.Add(Me.PlayButton)
         Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.leaveButon)
-        Me.Controls.Add(Me.pseudoLabel)
+        Me.Controls.Add(Me.LabelPseudoDuJoueur)
         Me.Controls.Add(Me.LabelPseudo)
         Me.Controls.Add(Me.LabelTimer)
         Me.Controls.Add(Me.PictureBox1)
@@ -204,12 +204,12 @@ Partial Class JeuSudoku
     Friend WithEvents Timer1 As Timer
     Friend WithEvents LabelTimer As Label
     Friend WithEvents LabelPseudo As Label
-    Friend WithEvents pseudoLabel As Label
+    Friend WithEvents LabelPseudoDuJoueur As Label
     Friend WithEvents leaveButon As Button
     Friend WithEvents PauseButton As Button
     Friend WithEvents PlayButton As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanelGrilleSudoku As TableLayoutPanel
     Friend WithEvents ButtonMusic As Button
     Friend WithEvents ButtonMusicOFF As Button
 End Class

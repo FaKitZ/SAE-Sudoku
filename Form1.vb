@@ -1,7 +1,9 @@
 ﻿Public Class MenuSudoku
+
     Dim i As Integer
     Private itemsListComboBoxF1 As New List(Of String)  'Liste de joueurs pour la comboBox du menu
     Private CurrentBackground As String
+    Private couleurSudoku As New CouleurSudoku
 
     Private Sub MenuSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If ModuleJoueur.CheminDossier IsNot Nothing Then
@@ -79,61 +81,4 @@
         Me.Hide()
         ParametreSudoku.Show()
     End Sub
-
-    'Méthode qui met le mode classique sur le formulaire
-    Public Sub ApplyLightTheme()
-        Me.BackColor = SystemColors.ActiveCaption
-        ' Changez les autres propriétés de contrôle si nécessaire
-        For Each ctrl As Control In Me.Controls
-            If TypeOf ctrl Is Label Then
-                ctrl.ForeColor = DefaultForeColor
-            ElseIf TypeOf ctrl Is Button Then
-                ctrl.BackColor = DefaultBackColor
-                ctrl.ForeColor = DefaultForeColor
-            End If
-        Next
-        For Each ctrl As Control In Me.GroupBox1.Controls
-            If TypeOf ctrl Is Label Then
-                ctrl.ForeColor = DefaultForeColor
-            ElseIf TypeOf ctrl Is Button Then
-                ctrl.BackColor = DefaultBackColor
-                ctrl.ForeColor = DefaultForeColor
-            End If
-        Next
-        For Each ctrl As Control In Me.GroupBox1.Controls
-            If CurrentBackground = "RIVER" Then
-                If TypeOf ctrl Is Button Then
-                    ctrl.BackColor = ParametreSudoku.color2
-                    ctrl.ForeColor = ParametreSudoku.color1
-                ElseIf TypeOf ctrl Is Label Then
-                    ctrl.ForeColor = ParametreSudoku.color1
-                ElseIf TypeOf ctrl Is ComboBox Then
-                    ctrl.BackColor = ParametreSudoku.color4
-                    ctrl.ForeColor = ParametreSudoku.color1
-                End If
-
-            Else
-            End If
-        Next
-        Me.nameComboBox1.BackColor = DefaultBackColor
-        Me.nameComboBox1.ForeColor = DefaultForeColor
-    End Sub
-    'methode public qui permet de changer le theme sur ce formulaire
-    Public Sub ChangeMap(background As String)
-        CurrentBackground = background
-        ApplyMapCustomization(CurrentBackground)
-    End Sub
-    'Methode qui applique le changement de theme
-    Private Sub ApplyMapCustomization(CurrentBackground)
-        Select Case CurrentBackground
-            Case "RIVER"
-                Me.BackgroundImage = My.Resources.River
-            Case "SNOW"
-                Me.BackgroundImage = My.Resources.Neige
-            Case "DEFAUT"
-                Me.BackgroundImage = Nothing
-                Me.BackColor = SystemColors.ActiveCaption
-        End Select
-    End Sub
-
 End Class

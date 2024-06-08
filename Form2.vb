@@ -1,5 +1,4 @@
 ﻿Imports System.Media
-
 Public Class JeuSudoku
 
     Private remainingTime As TimeSpan
@@ -8,13 +7,7 @@ Public Class JeuSudoku
     Private CurrentBackground As String
     Private CurrentColorScheme As String
     Private isDarkMode As Boolean = False
-
-    'Couleurs'
-    Dim darkAccent1 As Color = Color.FromArgb(48, 48, 48)     ' Accent sombre 1
-    Dim darkAccent2 As Color = Color.FromArgb(72, 72, 72)     ' Accent sombre 2
-    Dim darkAccent3 As Color = Color.FromArgb(96, 96, 96)     ' Accent sombre 3
-    Dim highlight1 As Color = Color.FromArgb(255, 140, 0)     ' Orange vif pour les points de mise en évidence
-    Dim highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
+    Private couleurSudoku As New CouleurSudoku
 
     ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
     Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
@@ -31,45 +24,19 @@ Public Class JeuSudoku
                 textBox.Font = New Font("Arial", 22, FontStyle.Bold)
                 AddHandler textBox.TextChanged, AddressOf TextBox_TextChanged
                 textBox.MaxLength = 1
-                TableLayoutPanel1.Controls.Add(textBox, j, i)
+                TableLayoutPanelGrilleSudoku.Controls.Add(textBox, j, i)
             Next
         Next
 
         GenerateSudoku() 'génère le sudoku au démarrage
 
-        ApplyMapCustomization(CurrentBackground)
-
-
+        couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
     End Sub
 
     'Change le thème du fond en jeu
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
-        ApplyMapCustomization(CurrentBackground)
-    End Sub
-
-    Private Sub ApplyMapCustomization(CurrentBackground)
-        ' Change background image
-        Select Case CurrentBackground
-            Case "RIVER"
-                Me.BackgroundImage = My.Resources.River
-                Dim color1 As Color = Color.FromArgb(255, 165, 0)   ' Orange (feuilles d'automne)
-                Dim color2 As Color = Color.FromArgb(255, 223, 0)   ' Jaune (feuilles d'automne)
-                Dim color3 As Color = Color.FromArgb(205, 92, 92)   ' Rouge adouci (feuilles d'automne)
-                Dim color4 As Color = Color.FromArgb(0, 191, 255)   ' Bleu (ciel clair)
-                ApplyGridColors(color1, color2, color3, color4)
-            Case "SNOW"
-                Dim color1 As Color = Color.FromArgb(255, 255, 255)   ' Blanc (neige)
-                Dim color2 As Color = Color.FromArgb(0, 191, 255)     ' Bleu clair (ciel et ombres sur la neige)
-                Dim color3 As Color = Color.FromArgb(64, 224, 208)    ' Bleu turquoise
-                Dim color4 As Color = Color.FromArgb(139, 69, 19)     ' Marron (tronc d'arbres et cabane)
-                ApplyGridColors(color1, color2, color3, color4)
-                Me.BackgroundImage = My.Resources.Neige
-            Case "DEFAUT"
-                Me.BackgroundImage = Nothing
-                Me.BackColor = SystemColors.ActiveCaption
-
-        End Select
+        couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
     End Sub
 
     Public Sub ChangeDarkMod(value As Boolean)
@@ -78,23 +45,8 @@ Public Class JeuSudoku
 
     Public Sub ApplyDarkMod()
         If isDarkMode = True Then
-            ParametreSudoku.SetDarkjeu()
+            couleurSudoku.SetDarkjeu()
         End If
-    End Sub
-
-    Public Sub ApplyGridColors(gridBackColor As Color, gridForeColor As Color, readOnlyBackColor As Color, readOnlyForeColor As Color)
-        For Each ctrl As Control In TableLayoutPanel1.Controls
-            If TypeOf ctrl Is TextBox Then
-                Dim txtBox As TextBox = ctrl
-                If txtBox.ReadOnly Then
-                    txtBox.BackColor = readOnlyBackColor
-                    txtBox.ForeColor = readOnlyForeColor
-                Else
-                    txtBox.BackColor = gridBackColor
-                    txtBox.ForeColor = gridForeColor
-                End If
-            End If
-        Next
     End Sub
 
     'méthode qui règle la variable remainingTime, et prends en comptes les changements effectuer par le joueur dans les paramètres 
@@ -108,7 +60,6 @@ Public Class JeuSudoku
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1))
         LabelTimer.Text = "Temps restant : " & remainingTime.ToString("mm\:ss")
-
         If remainingTime.TotalSeconds <= 0 Then
             FinDePartieSiLoose()
             Timer1.Stop()
@@ -118,7 +69,7 @@ Public Class JeuSudoku
         End If
     End Sub
 
-    'lance le timer de la partie
+    'Lance le timer de la partie
     Public Sub StartTimerGame()
         Timer1.Interval = 1000
         remainingTime = initialTime
@@ -127,11 +78,11 @@ Public Class JeuSudoku
         Timer1.Enabled = True
     End Sub
 
-    'verifie le chiffre placé dans une textBox et met en rouge si le chiffre est invalid
+    'Verifie le chiffre placé dans une textBox et met en rouge si le chiffre est invalid
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs)
         Dim txtBox As TextBox = CType(sender, TextBox)
-        Dim ligneIndex As Integer = TableLayoutPanel1.GetRow(txtBox)
-        Dim colonneIndex As Integer = TableLayoutPanel1.GetColumn(txtBox)
+        Dim ligneIndex As Integer = TableLayoutPanelGrilleSudoku.GetRow(txtBox)
+        Dim colonneIndex As Integer = TableLayoutPanelGrilleSudoku.GetColumn(txtBox)
 
         RemoveHandler txtBox.TextChanged, AddressOf TextBox_TextChanged
 
@@ -156,7 +107,7 @@ Public Class JeuSudoku
         ' Check les lignes
         For j As Integer = 0 To 8
             If j <> colonne Then
-                Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, ligne), TextBox)
+                Dim otherBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, ligne), TextBox)
                 If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                     Return False
                 End If
@@ -166,7 +117,7 @@ Public Class JeuSudoku
         ' Check les colonnes
         For i As Integer = 0 To 8
             If i <> ligne Then
-                Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(colonne, i), TextBox)
+                Dim otherBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(colonne, i), TextBox)
                 If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                     Return False
                 End If
@@ -179,7 +130,7 @@ Public Class JeuSudoku
         For i As Integer = startLigne To startLigne + 2
             For j As Integer = startColonne To startColonne + 2
                 If (i <> ligne Or j <> colonne) Then
-                    Dim otherBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
+                    Dim otherBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, i), TextBox)
                     If otherBox IsNot Nothing AndAlso otherBox.Text = valeur Then
                         Return False
                     End If
@@ -206,7 +157,7 @@ Public Class JeuSudoku
 
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
-                Dim txtBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
+                Dim txtBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, i), TextBox)
                 If grid(i, j) <> 0 Then
                     txtBox.Text = grid(i, j).ToString()
                     txtBox.ReadOnly = True
@@ -253,7 +204,7 @@ Public Class JeuSudoku
     Private Sub CheckIfGrilleComplete()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
-                Dim txtBox As TextBox = CType(TableLayoutPanel1.GetControlFromPosition(j, i), TextBox)
+                Dim txtBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, i), TextBox)
                 If txtBox Is Nothing OrElse String.IsNullOrEmpty(txtBox.Text) OrElse Not IsValidEntry(txtBox.Text, i, j) Then
                     Return
                 End If
@@ -267,7 +218,7 @@ Public Class JeuSudoku
         Me.Close()
     End Sub
 
-    'Met a jours les stats d'un joueur s'il gagne
+    'Met à jours les stats d'un joueur s'il gagne
     Private Sub FinDePartieSiLoose()
 
         Dim nomJoueur As String = MenuSudoku.nameComboBox1.Text
@@ -296,33 +247,17 @@ Public Class JeuSudoku
         Timer1.Stop()
         PlayButton.Visible = True
         PauseButton.Visible = False
-        TableLayoutPanel1.Enabled = False
+        TableLayoutPanelGrilleSudoku.Enabled = False
     End Sub
 
     Private Sub PlayButton_Click(sender As Object, e As EventArgs) Handles PlayButton.Click
         Timer1.Start()
-        TableLayoutPanel1.Enabled = True
+        TableLayoutPanelGrilleSudoku.Enabled = True
         PlayButton.Visible = False
         PauseButton.Visible = True
     End Sub
 
-    'Change les couleurs en fonctions du thème choisis par le joueur
-    Public Sub ApplyLightTheme()
-        Me.BackColor = SystemColors.ActiveCaption
-        ' Changez les autres propriétés de contrôle si nécessaire
-        For Each ctrl As Control In Me.Controls
-            If TypeOf ctrl Is Label Then
-                ctrl.ForeColor = DefaultForeColor
-            End If
-        Next
-        For Each ctrl As Control In TableLayoutPanel1.Controls
-            If TypeOf ctrl Is TextBox Then
-                Dim txtBox As TextBox = ctrl
-                txtBox.BackColor = DefaultBackColor
-                txtBox.ForeColor = DefaultForeColor
-            End If
-        Next
-    End Sub
+
     'Bouton qui active la musique
     Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
         ButtonMusic.Visible = False
