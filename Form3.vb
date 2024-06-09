@@ -1,11 +1,6 @@
 ﻿Public Class StatSudoku
     Private joueurs As List(Of ModuleJoueur.JOUEUR)
     Private CurrentBackground As String
-
-
-    Private Sub StatSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
     Public Sub LoadStats()
         ModuleJoueur.LoadData()
     End Sub
