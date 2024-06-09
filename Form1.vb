@@ -73,6 +73,7 @@
 
     Private Sub ScoreButton1_Click(sender As Object, e As EventArgs) Handles ScoreButton1.Click
         StatSudoku.Show()
+        StatSudoku.LoadStats()
         Me.Hide()
     End Sub
 

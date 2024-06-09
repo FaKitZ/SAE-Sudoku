@@ -84,30 +84,32 @@ Public Class JeuSudoku
                 TableLayoutPanelGrilleSudoku.Controls.Add(textBox, j, i)
             Next
         Next
+        LancementDeLaPartie()
+    End Sub
+
+    Private Function LancementDeLaPartie() As Task
         GenerateSudoku() 'génère le sudoku au démarrage
         StartTimerGame() 'lance le timer du sudoku
         ApplyDarkMod()
-        couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
+        couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground) 'Applique le thème sur le formulaire de jeu
         ApplyRegionColors(isDarkMode, CurrentBackground) ' Applique les couleurs aux régions après avoir généré la grille
-    End Sub
+    End Function
+
+
 
     'Change le thème du fond en jeu
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
-
-
     End Sub
 
     Public Sub ChangeDarkMod(value As Boolean)
         isDarkMode = value
-
     End Sub
 
     Public Sub ApplyDarkMod()
         If isDarkMode = True Then
             couleurSudoku.SetDarkjeu()
-
         End If
     End Sub
 
@@ -314,10 +316,7 @@ Public Class JeuSudoku
                 ' Parcourir les contrôles du TableLayoutPanel et supprimer les TextBox
                 Dim controlToRemove As Control = TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, i)
                 If TypeOf controlToRemove Is TextBox Then
-                    ' Supprimer le contrôle trouvé
                     TableLayoutPanelGrilleSudoku.Controls.Remove(controlToRemove)
-                    ' Facultatif : libérer les ressources utilisées par le TextBox
-                    controlToRemove.Dispose()
                 End If
             Next
         Next

@@ -20,22 +20,24 @@
     Private highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
     Private highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
-    Public Shared ReadOnly LightColors As Color() = {Color.LightBlue, Color.LightGreen, Color.LightCoral, Color.LightGoldenrodYellow, Color.LightPink, Color.LightSalmon}
-    Public Shared ReadOnly DarkColors As Color() = {Color.DarkBlue, Color.DarkGreen, Color.DarkRed, Color.DarkGoldenrod, Color.DarkMagenta, Color.DarkSalmon}
+    'Couleur des régions
+    Public LightColors As Color() = {Color.LightBlue, Color.LightGreen, Color.LightCoral, Color.LightGoldenrodYellow, Color.LightPink, Color.LightSalmon}
+    Public DarkColors As Color() = {Color.DarkBlue, Color.DarkGreen, Color.DarkRed, Color.DarkGoldenrod, Color.DarkMagenta, Color.DarkSalmon}
 
-    Public Shared Function GetColors(isDarkMode As Boolean, theme As String) As Color()
-        If isDarkMode Then
-            Return DarkColors
-        Else
-            Return LightColors
-        End If
-    End Function
     'Couleur defaut pour les formulaire
     Private defaultColorFore As Color
     Private defaultColorBack As Color
 
     'Map & theme
     Private CurrentBackground As String
+    'Return les couleurs pour appliquer les régions
+    Public Function GetColors(isDarkMode As Boolean, theme As String) As Color()
+        If isDarkMode Then
+            Return DarkColors
+        Else
+            Return LightColors
+        End If
+    End Function
 
     Private Sub ColorForeChangeToDefault()
         defaultColorFore = ParametreSudoku.DefaultcolorFore
@@ -272,6 +274,20 @@
             Case "DEFAUT"
                 MenuSudoku.BackgroundImage = Nothing
                 MenuSudoku.BackColor = SystemColors.ActiveCaption
+                For Each ctrl As Control In MenuSudoku.GroupBox1.Controls
+                    If CurrentBackground = "DEFAUT" Then
+                        If TypeOf ctrl Is Button Then
+                            ctrl.BackColor = SystemColors.ActiveCaption
+                            ctrl.ForeColor = defaultColorFore
+                        ElseIf TypeOf ctrl Is Label Then
+                            ctrl.ForeColor = defaultColorFore
+                        ElseIf TypeOf ctrl Is ComboBox Then
+                            ctrl.BackColor = SystemColors.ActiveCaption
+                            ctrl.ForeColor = defaultColorFore
+                        End If
+                    Else
+                    End If
+                Next
         End Select
     End Sub
 
