@@ -14,7 +14,8 @@ Public Class JeuSudoku
 
     ' Utiliser SoundPlayer pour lire le fichier WAV
     Dim music As New SoundPlayer(wavFilePath)
-    Private Sub JeuSudoku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Public Sub GenerationsDesTextBox()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
                 Dim textBox As New TextBox
@@ -27,8 +28,9 @@ Public Class JeuSudoku
                 TableLayoutPanelGrilleSudoku.Controls.Add(textBox, j, i)
             Next
         Next
-
         GenerateSudoku() 'génère le sudoku au démarrage
+        StartTimerGame() 'lance le timer du sudoku
+        ApplyDarkMod()
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
     End Sub
 
@@ -144,7 +146,7 @@ Public Class JeuSudoku
         Difficulte = valeur
     End Sub
 
-    Private Sub GenerateSudoku()
+    Public Sub GenerateSudoku()
         Dim generator As New SudokuGenerator()
         Dim grid(,) As Integer = generator.Generate()
 
@@ -236,9 +238,26 @@ Public Class JeuSudoku
             music.Stop()
             FinDePartieSiLoose()
             Timer1.Stop()
+            DeleteTextBox()
             MenuSudoku.Show()
             Me.Hide()
         End If
+    End Sub
+
+    Private Sub DeleteTextBox()
+        For i As Integer = 0 To 8
+            For j As Integer = 0 To 8
+                ' Parcourir les contrôles du TableLayoutPanel et supprimer les TextBox
+                Dim controlToRemove As Control = TableLayoutPanelGrilleSudoku.GetControlFromPosition(j, i)
+                If TypeOf controlToRemove Is TextBox Then
+                    ' Supprimer le contrôle trouvé
+                    TableLayoutPanelGrilleSudoku.Controls.Remove(controlToRemove)
+                    ' Facultatif : libérer les ressources utilisées par le TextBox
+                    controlToRemove.Dispose()
+                End If
+            Next
+        Next
+
     End Sub
 
     Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click

@@ -44,10 +44,9 @@
                 End If
             End If
             JeuSudoku.LabelPseudo.Text = Me.nameComboBox1.Text
-            JeuSudoku.StartTimerGame()
             JeuSudoku.Show()
+            JeuSudoku.GenerationsDesTextBox()
             Me.Hide()
-            JeuSudoku.ApplyDarkMod()
         End If
     End Sub
 
