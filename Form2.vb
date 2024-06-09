@@ -8,6 +8,7 @@ Public Class JeuSudoku
     Private CurrentColorScheme As String
     Private isDarkMode As Boolean = False
     Private couleurSudoku As New CouleurSudoku
+    Private ReadOnlyTextColor As Color = Color.Black
 
     ' Chemin du fichier WAV (assurez-vous que le nom du fichier est correct)
     Dim wavFilePath As String = AppDomain.CurrentDomain.BaseDirectory & "audio.wav"
@@ -15,6 +16,61 @@ Public Class JeuSudoku
     ' Utiliser SoundPlayer pour lire le fichier WAV
     Dim music As New SoundPlayer(wavFilePath)
 
+    ' Applique les couleurs aux régions en évitant les couleurs adjacentes identiques
+    Private Sub ApplyRegionColors(isDarkMode As Boolean, theme As String)
+        Dim regionColors(8) As Color
+        Dim rand As New Random()
+        Dim availableColors As Color() = CouleurSudoku.GetColors(isDarkMode, theme)
+        For region As Integer = 0 To 8
+            Dim possibleColors As List(Of Color) = availableColors.ToList()
+            ' Remove colors of adjacent regions
+            Dim adjacentRegions As List(Of Integer) = GetAdjacentRegions(region)
+            For Each adjRegion In adjacentRegions
+                If regionColors(adjRegion) <> Nothing Then
+                    possibleColors.Remove(regionColors(adjRegion))
+                End If
+            Next
+            ' Select a random color from the possible colors
+            regionColors(region) = possibleColors(rand.Next(possibleColors.Count))
+        Next
+        ' Apply the colors to the regions
+        For row As Integer = 0 To 8
+            For col As Integer = 0 To 8
+                Dim region As Integer = (row \ 3) * 3 + (col \ 3)
+                Dim textBox As TextBox = CType(TableLayoutPanelGrilleSudoku.GetControlFromPosition(col, row), TextBox)
+                textBox.BackColor = regionColors(region)
+                ' Apply text color for ReadOnly textboxes
+                If textBox.ReadOnly Then
+                    textBox.ForeColor = ReadOnlyTextColor
+                End If
+            Next
+        Next
+    End Sub
+    ' Fonction pour obtenir les régions adjacentes d'une région donnée
+    Private Function GetAdjacentRegions(region As Integer) As List(Of Integer)
+        Dim adjacentRegions As New List(Of Integer)
+        Select Case region
+            Case 0
+                adjacentRegions.AddRange({1, 3})
+            Case 1
+                adjacentRegions.AddRange({0, 2, 4})
+            Case 2
+                adjacentRegions.AddRange({1, 5})
+            Case 3
+                adjacentRegions.AddRange({0, 4, 6})
+            Case 4
+                adjacentRegions.AddRange({1, 3, 5, 7})
+            Case 5
+                adjacentRegions.AddRange({2, 4, 8})
+            Case 6
+                adjacentRegions.AddRange({3, 7})
+            Case 7
+                adjacentRegions.AddRange({4, 6, 8})
+            Case 8
+                adjacentRegions.AddRange({5, 7})
+        End Select
+        Return adjacentRegions
+    End Function
     Public Sub GenerationsDesTextBox()
         For i As Integer = 0 To 8
             For j As Integer = 0 To 8
@@ -32,21 +88,26 @@ Public Class JeuSudoku
         StartTimerGame() 'lance le timer du sudoku
         ApplyDarkMod()
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
+        ApplyRegionColors(isDarkMode, CurrentBackground) ' Applique les couleurs aux régions après avoir généré la grille
     End Sub
 
     'Change le thème du fond en jeu
     Public Sub ChangeMap(background As String)
         CurrentBackground = background
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground)
+
+
     End Sub
 
     Public Sub ChangeDarkMod(value As Boolean)
         isDarkMode = value
+
     End Sub
 
     Public Sub ApplyDarkMod()
         If isDarkMode = True Then
             couleurSudoku.SetDarkjeu()
+
         End If
     End Sub
 
@@ -162,9 +223,11 @@ Public Class JeuSudoku
                 If grid(i, j) <> 0 Then
                     txtBox.Text = grid(i, j).ToString()
                     txtBox.ReadOnly = True
+                    txtBox.ForeColor = ReadOnlyTextColor ' Apply color to ReadOnly text
                 Else
                     txtBox.Text = ""
                     txtBox.ReadOnly = False
+                    txtBox.ForeColor = Color.Black ' Default color for editable text
                 End If
             Next
         Next
@@ -214,6 +277,7 @@ Public Class JeuSudoku
         MessageBox.Show("Félicitations, vous avez complété le Sudoku!", "Partie terminée", MessageBoxButtons.OK, MessageBoxIcon.Information)
         FinDePartieSiWin()
         Timer1.Stop()
+        DeleteTextBox()
         MenuSudoku.Show()
         Me.Close()
     End Sub
@@ -323,3 +387,4 @@ Public Class JeuSudoku
         ButtonInternet.Visible = True
     End Sub
 End Class
+

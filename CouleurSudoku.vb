@@ -1,4 +1,5 @@
 ﻿Public Class CouleurSudoku
+
     'couleurs thème
     Private color1River As Color = Color.FromArgb(255, 165, 0)   ' Orange (feuilles d'automne)
     Private color2River As Color = Color.FromArgb(255, 223, 0)   ' Jaune (feuilles d'automne)
@@ -19,6 +20,16 @@
     Private highlight3 As Color = Color.FromArgb(205, 92, 92)     ' Rouge adouci pour les points de mise en évidence
     Private highlight4 As Color = Color.FromArgb(0, 206, 209)     ' Turquoise pour les points de mise en évidence
 
+    Public Shared ReadOnly LightColors As Color() = {Color.LightBlue, Color.LightGreen, Color.LightCoral, Color.LightGoldenrodYellow, Color.LightPink, Color.LightSalmon}
+    Public Shared ReadOnly DarkColors As Color() = {Color.DarkBlue, Color.DarkGreen, Color.DarkRed, Color.DarkGoldenrod, Color.DarkMagenta, Color.DarkSalmon}
+
+    Public Shared Function GetColors(isDarkMode As Boolean, theme As String) As Color()
+        If isDarkMode Then
+            Return DarkColors
+        Else
+            Return LightColors
+        End If
+    End Function
     'Couleur defaut pour les formulaire
     Private defaultColorFore As Color
     Private defaultColorBack As Color
