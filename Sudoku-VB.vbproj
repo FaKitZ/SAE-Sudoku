@@ -138,12 +138,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SudokuGenerator.vb" />
-    <Compile Include="UserControl1.Designer.vb">
-      <DependentUpon>UserControl1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Youtube.Designer.vb">
       <DependentUpon>Youtube.vb</DependentUpon>
     </Compile>
