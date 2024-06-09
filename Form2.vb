@@ -87,13 +87,13 @@ Public Class JeuSudoku
         LancementDeLaPartie()
     End Sub
 
-    Private Function LancementDeLaPartie() As Task
+    Private Sub LancementDeLaPartie()
         GenerateSudoku() 'génère le sudoku au démarrage
         StartTimerGame() 'lance le timer du sudoku
         ApplyDarkMod()
         couleurSudoku.ApplyMapCustomizationJeuSudoku(CurrentBackground) 'Applique le thème sur le formulaire de jeu
         ApplyRegionColors(isDarkMode, CurrentBackground) ' Applique les couleurs aux régions après avoir généré la grille
-    End Function
+    End Sub
 
 
 
